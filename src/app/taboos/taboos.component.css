@@ -1,0 +1,16 @@
+li {
+    width: 1.866667rem;
+    height: .48rem;
+    border-radius: .24rem;
+    border: 1px solid #999999;
+    color: #999999;
+    text-align: center;
+    margin: .24rem .64rem .213333rem .64rem;
+    float: left;
+    font-size: .32rem;
+}
+
+li.active {
+    color: #F99839;
+    border: 1px solid #F99839;
+}

@@ -1,0 +1,108 @@
+ul {
+    text-align: center;
+    /* background: rgb(246, 246, 246); */
+}
+
+.style {
+    height: 1.733333rem;
+    outline: none;
+    border: 0;
+    width: 90%;
+    text-indent: .133333rem;
+    font-size: .4rem;
+    color: #999999;
+    border-bottom: 1px solid #999999;
+}
+
+.style.none {
+    height: 1.733333rem;
+    outline: none;
+    border: 0;
+    width: 90%;
+    text-indent: .133333rem;
+    font-size: .4rem;
+    color: #999999;
+    border-bottom: 0px solid #999999;
+}
+
+ul.dishInfo li h1 {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    color: #FF7979;
+    font-size: .453333rem;
+}
+
+.categoryhr {
+    height: .133333rem;
+    background: rgb(246, 246, 246);
+}
+
+.dish {
+    height: 1.6rem;
+    width: 90%;
+    margin: 0 auto;
+    /* line-height: 1.6rem; */
+    /* position: relative; */
+}
+
+.dish .userinfo {
+    float: left;
+}
+
+.dish .userinfo img {
+    height: .88rem;
+    width: .88rem;
+    border-radius: .44rem;
+}
+
+.dish .userinfo span {
+    font-size: .346667rem;
+    color: #999999;
+}
+
+.dish .dish-details {
+    float: left;
+    max-width: 4.666667rem;
+    margin-left: .56rem;
+    text-align: left;
+}
+
+.dish-details p {
+    font-size: .453333rem;
+    color: #333333;
+    height: .48rem;
+    line-height: .48rem;
+}
+
+.dish-details .price {
+    color: #FF7979;
+    font-size: .346667rem;
+}
+
+footer {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    border: .013333rem solid #d7d7d7;
+    background: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer span {
+    font-size: .453333rem;
+    display: inline-block;
+    width: 49%;
+    font-weight: bold;
+    color: #FF7979;
+}
+
+footer span.r {
+    font-size: .453333rem;
+    display: inline-block;
+    width: 49%;
+    font-weight: bold;
+    background: #FF7979;
+    color: #ffffff;
+}

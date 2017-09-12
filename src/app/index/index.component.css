@@ -1,0 +1,105 @@
+.notify {
+    height: 1.066667rem;
+    line-height: 1.066667rem;
+    font-size: .4rem;
+    background: #FFFFFF;
+    color: #FF7979;
+    text-align: center;
+}
+
+ul {
+    float: left;
+    /* max-height: 12.66666rem; */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.left {
+    width: 3.066667rem;
+    background: #FFFFFF;
+}
+
+.left li {
+    margin: .066667rem .29rem;
+    width: 2.4rem;
+    height: 2rem;
+    color: #999999;
+    border: .013333rem solid #999999;
+    border-radius: .133333rem;
+    font-weight: bold;
+    padding-left: .32rem;
+}
+
+.left li h1 {
+    margin-top: .373333rem;
+    margin-bottom: .453333rem;
+    font-size: .4rem;
+}
+
+.left li p {
+    font-size: .533333rem;
+}
+
+.left .active {
+    background: #FF7979;
+    color: #FFFFFF;
+    border: .013333rem solid #FFFFFF;
+    border-radius: .133333rem;
+}
+
+.right {
+    width: 6.933333rem;
+    background: #F6F6F6;
+}
+
+.right li {
+    width: 6.266667rem;
+    margin: .146667rem .333333rem;
+    font-size: .4rem;
+}
+
+.right li img {
+    width: 6.266667rem;
+    height: 3.2rem;
+    border-radius: .133333rem;
+}
+
+.right li h1 {
+    margin: .4rem 0;
+}
+
+.right .price {
+    color: #FF7979;
+}
+
+footer {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    border: .013333rem solid #d7d7d7;
+    background: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span {
+    font-size: .453333rem;
+    font-weight: bold;
+    color: #FF7979;
+    position: absolute;
+    left: .56rem;
+}
+
+footer button {
+    width: 2.666667rem;
+    height: .8rem;
+    background: #F99839;
+    color: #FFFFFF;
+    font-size: .453333rem;
+    border-radius: .4rem;
+    border: 0;
+    outline: none;
+    position: absolute;
+    right: .266667rem;
+    top: .266667rem;
+}

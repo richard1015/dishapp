@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "SimSun";
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+ul {
+    -webkit-overflow-scrolling: touch;
+}
+
+.row {
+    width: 100%;
+    display: inline-block;
+}
+
+
+/* 数量加减按钮*/
+
+.numberContain {
+    float: right;
+}
+
+.numberContain .number {
+    text-align: center;
+    display: inline-block;
+    width: 1.44rem;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .5rem;
+    margin: 0;
+}
+
+.numberContain .add {
+    background: url('/assets/imgs/jia.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .4rem;
+    height: .4rem;
+    line-height: .4rem;
+}
+
+.numberContain .reduce {
+    background: url('/assets/imgs/jian.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .4rem;
+    height: .4rem;
+    line-height: .4rem;
+}
+
+.footer {
+    height: 1.333333rem;
+}
