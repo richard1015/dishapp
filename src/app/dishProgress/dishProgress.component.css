@@ -1,0 +1,100 @@
+.dishProgress {
+    padding: 0 .32rem;
+}
+
+li {
+    height: 3.333333rem;
+    border-bottom: 1px solid #d7d7d7;
+    padding: .48rem 0;
+    box-sizing: border-box;
+}
+
+.dishImg {
+    width: 3.333333rem;
+    height: 2.4rem;
+    position: relative;
+    float: left;
+}
+
+.dishImg img {
+    width: 3.333333rem;
+    height: 2.4rem;
+    border-radius: 10px;
+}
+
+.dishImg i {
+    position: absolute;
+    top: 0;
+    background: url('/assets/imgs/jiacai.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.173333rem;
+    line-height: .4rem;
+}
+
+.dishInfo {
+    width: 5.466667rem;
+    height: 2.4rem;
+    float: left;
+    margin-left: .533333rem;
+}
+
+.dishInfo h1 {
+    color: #333333;
+    font-size: .453333rem;
+}
+
+.dishInfo p {
+    color: #FF7979;
+    font-size: .32rem;
+    margin-top: .373333rem;
+    margin-bottom: .293333rem;
+}
+
+.dishInfo p span {
+    color: #333333;
+}
+
+.dishInfo button {
+    width: 2.053333rem;
+    height: .56rem;
+    outline: none;
+    background: #00B8EC;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: .28rem;
+    margin-right: 1.333333rem;
+}
+
+.dishInfo .time {
+    font-size: .32rem;
+    color: #666666;
+}
+
+footer {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #F6B55A;
+}
+
+footer span {
+    width: 49%;
+    font-size: .453333rem;
+    display: inline-block;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+footer span.r {
+    font-size: .453333rem;
+    display: inline-block;
+    font-weight: bold;
+    background: #FF7979;
+    color: #ffffff;
+}
