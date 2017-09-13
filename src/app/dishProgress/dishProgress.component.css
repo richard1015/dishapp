@@ -74,26 +74,26 @@ li {
 }
 
 footer {
+    display: flex;
     height: 1.333333rem;
     line-height: 1.333333rem;
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    background: #F6B55A;
 }
 
 footer span {
-    width: 49%;
+    flex:1;
     font-size: .453333rem;
-    display: inline-block;
     font-weight: bold;
     color: #FFFFFF;
+    background: #F6B55A;
 }
 
 footer span.r {
+    flex:1;
     font-size: .453333rem;
-    display: inline-block;
     font-weight: bold;
     background: #FF7979;
     color: #ffffff;

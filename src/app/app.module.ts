@@ -8,6 +8,8 @@ import { OrderInfoComponent } from './orderInfo/orderInfo.component';
 import { TaboosComponent } from './taboos/taboos.component';
 import { DishProgressComponent } from './dishProgress/dishProgress.component';
 
+import { AddressComponent } from './address/address.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,9 @@ import { DishProgressComponent } from './dishProgress/dishProgress.component';
     IndexComponent,
     OrderInfoComponent,
     TaboosComponent,
-    DishProgressComponent
+    DishProgressComponent,
+
+    AddressComponent
 ],
   imports: [
     BrowserModule
