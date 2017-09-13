@@ -1,3 +1,10 @@
+.taboos{
+    box-sizing: border-box;
+    height: 100%;
+    padding-top:1.173333rem;
+    background-color: #ffffff;
+}
+
 li {
     width: 1.866667rem;
     height: .48rem;

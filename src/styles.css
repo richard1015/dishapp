@@ -2,11 +2,12 @@
 
 html {
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "SimSun";
+    height: 100%;
 }
 
 body {
     height: 100%;
-    overflow: hidden;
+    background-color: #f6f6f6;
 }
 
 ul {
