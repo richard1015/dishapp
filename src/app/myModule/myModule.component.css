@@ -1,0 +1,67 @@
+.mymodule-list
+{
+    box-sizing: border-box;
+    height: 100%;
+    padding: 1.84rem 0 0 .32rem;
+
+    background-color: #fff;
+}
+
+.mymodule-item
+{
+    position: relative;
+
+    float: left;
+
+    width: 2.933333rem;
+    height: 2.933333rem;
+    margin-right: .293333rem;
+    margin-bottom: .266667rem;
+}
+
+.mymodule-item-til
+{
+    font-size: .373333rem;
+
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+
+    -webkit-transform: translate(0,-50%);
+            transform: translate(0,-50%);
+    text-align: center;
+
+    color: #564a38;
+}
+
+.mymodule-item-check
+{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+
+    display: none;
+
+    width: 60%;
+    height: 60%;
+
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+.mymodule-item-check.active
+{
+    display: block;
+}
+
+.mymodule-item-img
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
