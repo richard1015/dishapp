@@ -3,6 +3,88 @@
     background-color: #ffffff;
 }
 
+
+/* 提示点菜begin */
+
+.dishno {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background: #FFFFFF;
+    text-align: center;
+    padding: 3.36rem 0;
+    display: none;
+}
+
+.dishno img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.dishno p {
+    margin: 1.333333rem 0;
+    font-size: .426667rem;
+}
+
+.dishno button {
+    width: 5.333333rem;
+    height: 1.066667rem;
+    outline: none;
+    background: #FF7979;
+    border-radius: .52rem;
+    border: 0;
+    color: #FFFFFF;
+    font-size: .453333rem;
+}
+
+
+/* 提示点菜end */
+
+
+/* 确定退菜begin */
+
+.dishRetreat {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: fixed;
+    padding: 5.466667rem 0;
+    display: block;
+    font-size: .4rem;
+}
+
+.dishRetreat img {
+    width: 7.333333rem;
+    height: 6rem;
+}
+
+.dishRetreat p {
+    color: #FFFFFF;
+    margin-top: -3.3rem;
+}
+
+.dishRetreat p.t {
+    color: #FFFFFF;
+    margin-top: .64rem;
+}
+
+.dishRetreat button {
+    margin-top: .32rem;
+    width: 2.666667rem;
+    height: .8rem;
+    outline: none;
+    background: #FFFFFF;
+    border-radius: .52rem;
+    border: 0;
+    color: #FF7979;
+}
+
+
+/* 确定退菜end */
+
 li {
     height: 3.333333rem;
     border-bottom: 1px solid #d7d7d7;
@@ -26,6 +108,7 @@ li {
 .dishImg i {
     position: absolute;
     top: 0;
+    left: 0;
     background: url('/assets/imgs/jiacai.png') no-repeat;
     background-position: center;
     background-size: cover;
@@ -85,7 +168,7 @@ footer {
 }
 
 footer span {
-    flex:1;
+    flex: 1;
     font-size: .453333rem;
     font-weight: bold;
     color: #FFFFFF;
@@ -93,7 +176,7 @@ footer span {
 }
 
 footer span.r {
-    flex:1;
+    flex: 1;
     font-size: .453333rem;
     font-weight: bold;
     background: #FF7979;

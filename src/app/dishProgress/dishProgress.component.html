@@ -1,5 +1,19 @@
 <app-header [title]="'08号桌菜品进度'" [right]="'完成'">
 </app-header>
+<!-- 没有菜品时 显示当前无菜 -->
+<div class="dishno">
+    <img src="/assets/imgs/weidiancan.png" alt="">
+    <p>亲，你还没点餐哟</p>
+    <button>立即点餐</button>
+</div>
+<!-- 确认退菜 -->
+<div class="dishRetreat">
+    <img src="/assets/imgs/tuicaibeijing.png" alt="">
+    <p>确认退菜？</p>
+    <p class="t">可能马上就好了噢！</p>
+    <button>取消</button>
+    <button>确认</button>
+</div>
 <div class="dishProgress">
     <ul>
         <li>

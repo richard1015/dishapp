@@ -9,6 +9,7 @@ import { TaboosComponent } from './taboos/taboos.component';
 import { DishProgressComponent } from './dishProgress/dishProgress.component';
 
 import { AddressComponent } from './address/address.component';
+import { OrderCheckComponent } from './orderCheck/orderCheck.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,8 @@ import { AddressComponent } from './address/address.component';
     OrderInfoComponent,
     TaboosComponent,
     DishProgressComponent,
-
-    AddressComponent
+    AddressComponent,
+    OrderCheckComponent
 ],
   imports: [
     BrowserModule
