@@ -10,6 +10,13 @@ import { DishProgressComponent } from './dishProgress/dishProgress.component';
 
 import { AddressComponent } from './address/address.component';
 import { OrderCheckComponent } from './orderCheck/orderCheck.component';
+import { ConsoleComponent } from './console/console.component';
+import { LimitsComponent } from './limits/limits.component';
+import { MymoduleComponent } from './myModule/myModule.component';
+import { LimitsadminComponent } from './limitsAdmin/limitsAdmin.component';
+import { MoneyComponent } from './money/money.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { OrderCheckComponent } from './orderCheck/orderCheck.component';
     TaboosComponent,
     DishProgressComponent,
     AddressComponent,
-    OrderCheckComponent
+    OrderCheckComponent,
+    AddressComponent,
+    ConsoleComponent,
+    LimitsComponent,
+    MymoduleComponent,
+    LimitsadminComponent,
+    MoneyComponent,
+    WithdrawComponent
 ],
   imports: [
     BrowserModule
