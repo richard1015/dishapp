@@ -1,4 +1,94 @@
 .orderCheck {
     padding: 1.173333rem 0 1.333333rem 0;
+    box-sizing: border-box;
+    height: 100%;
     background-color: #ffffff;
+}
+
+.dishlist {
+    padding: 0 .266667rem;
+}
+
+.dishlist h1 {
+    color: #FF7979;
+    font-size: .426667rem;
+    padding: .4rem 0;
+}
+
+.dishlist .count {
+    display: flex;
+    font-size: .48rem;
+    margin-top: .933333rem;
+}
+
+.dishlist .count span {
+    flex: 1;
+}
+
+.dishlist .count span.r {
+    text-align: right;
+    flex: 1;
+    color: #FF7979;
+}
+
+.dishlist .payState {
+    margin-top: 1.146667rem;
+    text-align: center;
+}
+
+.dishlist .payState img {
+    width: 2.933333rem;
+    height: 2.533333rem;
+}
+
+li {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 1px solid #d7d7d7;
+    display: flex;
+}
+
+li .left {
+    flex: 1;
+    font-size: .453333rem;
+    text-align: left;
+}
+
+li .center {
+    flex: 1;
+    font-size: .346667rem;
+    color: #999999;
+    text-align: center;
+}
+
+li .right {
+    flex: 1;
+    font-size: .346667rem;
+    text-align: right;
+}
+
+footer {
+    display: flex;
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span {
+    flex: 1;
+    font-size: .453333rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #F6B55A;
+}
+
+footer span.r {
+    flex: 1;
+    font-size: .453333rem;
+    font-weight: bold;
+    background: #FF7979;
+    color: #ffffff;
 }

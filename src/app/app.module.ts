@@ -16,6 +16,8 @@ import { MymoduleComponent } from './myModule/myModule.component';
 import { LimitsadminComponent } from './limitsAdmin/limitsAdmin.component';
 import { MoneyComponent } from './money/money.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { PayChoiceComponent } from './payChoice/payChoice.component';
+import { PayCodeComponent } from './payCode/payCode.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
     MymoduleComponent,
     LimitsadminComponent,
     MoneyComponent,
-    WithdrawComponent
+    WithdrawComponent,
+    PayChoiceComponent,
+    PayCodeComponent
 ],
   imports: [
     BrowserModule
