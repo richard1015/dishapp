@@ -1,0 +1,32 @@
+.module {
+    position: relative;
+    width: 2.906667rem;
+    height: 2.906667rem;
+    display: inline-block;
+}
+
+.module img {
+    width: 2.906667rem;
+    height: 2.906667rem;
+}
+
+.module i {
+    background-image: url('/assets/imgs/diancan.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .893333rem;
+    height: .893333rem;
+    position: absolute;
+    top: .733333rem;
+    left: 1.04rem;
+}
+
+.module span {
+    font-size: .4rem;
+    color: #564a38;
+    position: absolute;
+    top: 1.866667rem;
+    left: 1.04rem;
+}

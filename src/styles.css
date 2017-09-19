@@ -10,13 +10,35 @@ body {
     background-color: #f6f6f6;
 }
 
-ul {
+* {
     -webkit-overflow-scrolling: touch;
 }
 
 .row {
     width: 100%;
     display: inline-block;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #ffffff;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ffffff;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ffffff;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #ffffff;
 }
 
 
@@ -58,4 +80,9 @@ ul {
 
 .footer {
     height: 1.333333rem;
+}
+
+.pt-title {
+    box-sizing: border-box;
+    padding-top: 1.173333rem;
 }

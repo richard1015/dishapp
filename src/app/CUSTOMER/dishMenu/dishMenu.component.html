@@ -1,0 +1,27 @@
+<div class="index-main">
+  <app-header [title]="'08号桌'" [right]="'菜品进度'"></app-header>
+  <ul class="left">
+    <li [ngClass]="{'active': idx==pageindex}" (click)="pageindex=idx;dishlist=item.List" *ngFor="let item of dishMenu;let idx=index">
+      <h1>{{item.Name}}</h1>
+      <p>{{item.Count}}</p>
+    </li>
+  </ul>
+  <ul class="right">
+    <li *ngFor="let item of dishlist">
+      <img [src]="item.ImgUrl" alt="">
+      <h1>{{item.Name}}</h1>
+      <div class="row priceD">
+        <span class="price">88元</span>
+        <div class="numberContain">
+          <i class="add"></i>
+          <span class="number">2</span>
+          <i class="reduce"></i>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <footer>
+    <span>￥78</span>
+    <button>点完了</button>
+  </footer>
+</div>

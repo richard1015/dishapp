@@ -1,0 +1,119 @@
+.business {
+    height: 100%;
+    background: #ffffff;
+}
+
+.business-info {
+    height: 2.933333rem;
+    line-height: 2.933333rem;
+    background: #e8d7bf;
+}
+
+.business-info img {
+    height: 1.733333rem;
+    width: 1.733333rem;
+    border-radius: .866667rem;
+    border: .013333rem solid #ffffff;
+    vertical-align: middle;
+    margin: 0 .666667rem 0 1.333333rem;
+}
+
+.business-info span {
+    font-size: .453333rem;
+    height: 100%;
+    color: #564a38;
+    font-weight: bold;
+    width: 6rem;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: right;
+}
+
+.business-tab {
+    display: flex;
+    text-align: center;
+}
+
+.business-tab li {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    flex: 1;
+    color: #999999;
+    border-bottom: .053333rem solid #999999;
+    font-size: .426667rem;
+}
+
+.business-tab li.active {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    flex: 1;
+    color: #FF7979;
+    border-bottom: .053333rem solid #FF7979;
+    font-size: .426667rem;
+}
+
+.business-tab-service {
+    padding: 10px;
+}
+
+.business-tab-business {
+    padding: 10px;
+}
+
+.business-tab-business li {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    border-bottom: .013333rem;
+    font-size: .4rem;
+    color: #666666;
+    position: relative;
+    padding-left: .933333rem;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.business-tab-business li i {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .533333rem;
+    height: .533333rem;
+    line-height: .533333rem;
+    position: absolute;
+    top: .333333rem;
+    left: 0;
+}
+
+.time {
+    background-image: url('/assets/imgs/shijian.png');
+}
+
+.phone {
+    background-image: url('/assets/imgs/dianhua.png');
+}
+
+.address {
+    background-image: url('/assets/imgs/dizhi.png');
+}
+
+.business-tab-business .about {
+    height: 1.173333rem;
+    line-height: 1.173333rem;
+    font-size: .4rem;
+    color: #333333;
+    text-align: center;
+    border-top: .133333rem solid #f6f6f6;
+}
+
+.restaurant {
+    font-size: .373333rem;
+    color: #333333;
+}
+
+.restaurant img {
+    height: 2rem;
+    width: 2rem;
+    margin-right: .426667rem;
+}

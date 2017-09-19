@@ -1,0 +1,34 @@
+<div class="pt-title business">
+    <app-header [title]='"title"'></app-header>
+    <div class="business-info">
+        <img src="{{shopInfo.ShopImg}}" alt="">
+        <span>{{shopInfo.Name}}</span>
+    </div>
+    <ul class="business-tab">
+        <li class="active" [ngClass]="{'active': tab==1}" (click)="tab=1">服务</li>
+        <li [ngClass]="{'active': tab==2}" (click)="tab=2">商家</li>
+    </ul>
+    <div class="business-tab-service" *ngIf="tab==1">
+        <app-module [index]='1' [routerLink]="['dishMenu',shopInfo.Id]"></app-module>
+        <app-module [index]='2'></app-module>
+    </div>
+    <div class="business-tab-business" *ngIf="tab==2">
+        <ul>
+            <li><i class="time"></i>{{shopInfo.BusinessHours}}</li>
+            <li><i class="phone"></i>{{shopInfo.Tell}}</li>
+            <li><i class="address"></i>{{shopInfo.Address}}</li>
+        </ul>
+        <div class="about">关于我们</div>
+        <div class="restaurant">
+            <p>餐厅实景</p>
+            <img *ngFor="let item of shopInfo.ImgUrl.split(',')" src="{{item}}" alt="">
+        </div>
+        <!-- <div class="restaurant">
+            <p>餐厅视频</p>
+            <img src="https://pro.modao.cc/uploads3/images/983/9839307/raw_1495792137.png" alt="">
+            <img src="https://pro.modao.cc/uploads3/images/983/9839307/raw_1495792137.png" alt="">
+            <img src="https://pro.modao.cc/uploads3/images/983/9839307/raw_1495792137.png" alt="">
+            <img src="https://pro.modao.cc/uploads3/images/983/9839307/raw_1495792137.png" alt="">
+        </div> -->
+    </div>
+</div>

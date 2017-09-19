@@ -1,0 +1,60 @@
+.login {
+    background: url(/assets/imgs/denglubeijing.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 2.266667rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+}
+
+.login img {
+    width: 5.866667rem;
+    height: 1.6rem;
+}
+
+.login .form {
+    position: relative;
+    width: 6.88rem;
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    margin: 0 auto;
+    border-bottom: 1px solid #FFFFFF;
+    text-align: left;
+}
+
+.login .form input {
+    width: 6rem;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    font-size: .346667rem;
+    color: #FFFFFF;
+}
+
+.login .form i {
+    position: absolute;
+    top: .533333rem;
+    right: 0;
+    background: url('/assets/imgs/shanchu.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .48rem;
+    height: .48rem;
+    line-height: .4rem;
+}
+
+.login button {
+    margin-top: 1.546667rem;
+    width: 6.88rem;
+    height: 1.066667rem;
+    background: #FF7979;
+    outline: none;
+    color: #FFFFFF;
+    border: 0;
+    font-size: .453333rem;
+    border-radius: 20px;
+}
