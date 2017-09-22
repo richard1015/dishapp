@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
 
 // base
 import { AppComponent } from './app.component';
@@ -58,6 +60,7 @@ import { UploadService } from './SERVICE/upload.service';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(AppRoutes)
   ],
   providers: [

@@ -1,0 +1,117 @@
+.orderCheck {
+    padding: 1.173333rem 0 1.333333rem 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.dishlist {
+    padding: 0 .266667rem;
+    height: 100%;
+    overflow: auto;
+}
+
+.dishlist h1 {
+    color: #FF7979;
+    font-size: .426667rem;
+    padding: .4rem 0;
+}
+
+.dishlist .count {
+    display: flex;
+    font-size: .48rem;
+    margin-top: .933333rem;
+}
+
+.dishlist .count span {
+    flex: 1;
+}
+
+.dishlist .count span.r {
+    text-align: right;
+    flex: 1;
+    color: #FF7979;
+}
+
+.dishlist .payState {
+    margin-top: 1.146667rem;
+    text-align: center;
+}
+
+.dishlist .payState img {
+    width: 2.933333rem;
+    height: 2.533333rem;
+}
+
+li {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 1px solid #d7d7d7;
+    display: flex;
+}
+
+li .left {
+    flex: 1;
+    font-size: .453333rem;
+    text-align: left;
+}
+
+li .center {
+    flex: 1;
+    font-size: .346667rem;
+    color: #999999;
+    text-align: center;
+}
+
+li .right {
+    flex: 1;
+    font-size: .346667rem;
+    text-align: right;
+}
+
+.footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer li {
+    height: 1.333333rem;
+    flex: 1;
+    font-size: .373333rem;
+    color: #c7c7c7;
+    background: #594940;
+    text-align: center;
+    position: relative;
+}
+.footer li p{
+    width: 100%;
+    padding-top: .3rem;
+}
+.footer li i{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .533333rem;
+    height: .533333rem;
+    position: absolute;
+    top: .066667rem;
+    left:.766667rem;
+}
+.footer li i.jiacai{
+    background-image:url("/assets/imgs/jiacaii.png");
+}
+.footer li i.huacai{
+    background-image:url("/assets/imgs/huacai.png");
+}
+.footer li i.xiaopiao{
+    background-image:url("/assets/imgs/xiaopiao.png");
+}
+.footer li i.zhuantai{
+    background-image:url("/assets/imgs/zhuantai.png");
+}
+.footer li i.maidan{
+    background-image:url("/assets/imgs/maidan2.png");
+}

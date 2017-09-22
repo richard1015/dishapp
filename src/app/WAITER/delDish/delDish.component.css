@@ -1,0 +1,46 @@
+.delDish{
+    padding-top: 1.173333rem;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+}
+li {
+    padding-left: .133333rem;
+    padding-right: .133333rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 1px solid #d7d7d7;
+    display: flex;
+}
+
+li .left {
+    flex: 1;
+    font-size: .453333rem;
+    text-align: left;
+}
+
+li .center {
+    flex: 1;
+    font-size: .346667rem;
+    color: #999999;
+    text-align: center;
+}
+
+li .right {
+    flex: 1;
+    font-size: .346667rem;
+    text-align: right;
+    position: relative;
+}
+li .right i{
+    background-image:url("/assets/imgs/shanchu2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .48rem;
+    height: .48rem;
+    position: absolute;
+    top: .353333rem;
+    right: .773333rem;
+}

@@ -2,13 +2,14 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Headers, RequestOptions } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import { UploadService } from './upload.service';
-
+import { LocalStorage } from './local.storage';
+declare var layer: any;
 @Injectable()
 export class ApiService {
 
     public choiceScenicSpotEvent: EventEmitter<any> = new EventEmitter();
 
-    constructor(private http: Http, private upload: UploadService) { }
+    constructor(private http: Http, private upload: UploadService, private ls: LocalStorage) { }
 
     private post(data: ParamData): Observable<ResponseInfo> {
         let host = "/serverDianDian";
@@ -21,7 +22,7 @@ export class ApiService {
 
         if (data.loadingState) {
             //加载动画
-            console.log('loading ... ')
+            layer.load();
         }
 
         if (data.file) {
@@ -30,14 +31,16 @@ export class ApiService {
                 .filter((res: ResponseInfo) => {
                     console.log(res);
                     //隐藏加载动画
-                    console.log('loading close! ')
+                    layer.closeAll('loading');
                     switch (res.State) {
                         case 1:
                         case 2:
                             console.error(res.Msg);
+                            layer.msg(res.Msg);
                             break;
                         case 3:
                             console.error(res.Msg);
+                            layer.alert(res.Msg, { icon: 2 });
                             window.open('/', '_top');
                             break;
                     }
@@ -46,6 +49,7 @@ export class ApiService {
         } else {
             let myHeaders = new Headers();
             myHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
+            myHeaders.append('guid', this.ls.getObject("USERINFO").Guid);
             return this.http.post(
                 host,
                 body,
@@ -55,14 +59,16 @@ export class ApiService {
                 .filter((res: ResponseInfo) => {
                     console.log(res);
                     //隐藏加载动画
-                    console.log('loading close! ')
+                    layer.closeAll('loading');
                     switch (res.State) {
                         case 1:
                         case 2:
                             console.error(res.Msg);
+                            layer.msg(res.Msg);
                             break;
                         case 3:
                             console.error(res.Msg);
+                            layer.alert(res.Msg, { icon: 2 });
                             window.open('/', '_top');
                             break;
                     }
@@ -100,61 +106,8 @@ export class ResponseInfo {
         public State?: number,
         public Msg?: string,
         public Value?: any,
-        public TotalNumber?: number
+        public TotalNumber?: number,
+        public TotalString?: any
     ) {
     }
-}
-export class LoginParam {
-    public Phone?: number;
-    public Code?: number;
-}
-export class AlbumListParam {
-    public PageIndex: number = 1;
-    public PageSize: number = 10;
-    private Guid: string = localStorage["GUID"] || "";
-    public CType?: string;
-    public Name?: string = "";
-}
-export class EditAlbumParam {
-    public Name: string = "";
-    private Guid: string = localStorage["GUID"] || "";
-    public Introduce: string;
-    public Id: number;
-    public Price: string;
-    public CTypeId: number;
-    public RId: number;
-    public RType: number;
-}
-export class AlbumInfoParam {
-    private Guid: string = localStorage["GUID"] || "";
-    public Id: number;
-}
-export class SearchAlbumParam {
-    public KeyWord: string;
-    public CType: number;
-}
-export class AudioAlbumParam {
-    public AlbumId: number;
-    private Guid: string = localStorage["GUID"] || "";
-    public PageIndex: number;
-    public PageSize: number;
-}
-export class UploadAudioParam {
-    public RId: number;
-    private Guid: string = localStorage["GUID"] || "";
-    public Id: number;
-    public Name: string;
-    public Lang: number;
-    public SId: number;
-}
-export class ScenicSpotParam {
-    private Guid: string = localStorage["GUID"] || "";
-    public SId: number;
-    public AlbumId: number;
-}
-export class AddScenicSpotParam {
-    public SName: string;
-    private Guid: string = localStorage["GUID"] || "";
-    public Introduce: string;
-    public Id: number;
 }

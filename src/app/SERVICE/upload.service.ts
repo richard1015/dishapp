@@ -27,7 +27,6 @@ export class UploadService {
                     }
                 }
             }
-
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {

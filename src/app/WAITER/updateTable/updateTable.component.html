@@ -1,0 +1,9 @@
+<div class="update-table">
+  <app-header [title]="tableId+'号桌台转台'"></app-header>
+  <ul class="tabContent">
+    <li (click)="choice(item)" *ngFor="let item of tableArray">
+      <h1>{{item.DtNumber}}</h1>
+      <span>{{item.DtPeople}}人座</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="orderCheck">
+    <app-header [title]="orderInfo.DtNumber+'号桌订单核对'" [right]="''">
+    </app-header>
+
+    <div class="dishlist">
+        <h1>已点菜品：</h1>
+        <ul>
+            <li *ngFor="let item of orderInfo.List">
+                <span class="left">{{item.ShopMenuName}}</span>
+                <span class="center">￥{{item.UnitPrice}}X{{item.MenuNumber}}</span>
+                <span class="right">￥{{item.ShopMenuPrice}}</span>
+            </li>
+        </ul>
+        <div class="count">
+            <span>总计：</span>
+            <span class="r">￥{{orderInfo.Price}}</span>
+        </div>
+        <!-- 0初始状态1已下单未结账2已结账 -->
+        <div class="payState" *ngIf="orderInfo.OrderState==2">
+            <img src="/assets/imgs/yijiezhang.png" alt="">
+        </div>
+    </div>
+
+    <footer>
+        <span>TA买单</span>
+        <span class="r" (click)="pay()">我买单</span>
+    </footer>
+</div>

@@ -9,7 +9,7 @@
         <li [ngClass]="{'active': tab==2}" (click)="tab=2">商家</li>
     </ul>
     <div class="business-tab-service" *ngIf="tab==1">
-        <app-module [index]='1' [routerLink]="['dishMenu',shopInfo.Id]"></app-module>
+        <app-module [index]='1' [routerLink]="['dishMenu']"></app-module>
         <app-module [index]='2'></app-module>
     </div>
     <div class="business-tab-business" *ngIf="tab==2">

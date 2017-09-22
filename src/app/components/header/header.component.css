@@ -29,6 +29,19 @@ header {
     width: 19%;
     text-align: center;
     float: left;
+    height: 100%;
+    line-height: 100%;
+    padding-top: .32rem;
+    box-sizing: border-box;
+}
+.left i{
+    background: url('/assets/imgs/baisejiantou.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .253333rem;
+    height: .48rem;
+    line-height: .48rem;
 }
 
 .right {

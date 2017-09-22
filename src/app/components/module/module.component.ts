@@ -20,5 +20,4 @@ export class ModuleComponent implements OnInit {
   ngOnInit() {
     this.item = this.iconArray.find(i => this.index == i.id);
   }
-
 }

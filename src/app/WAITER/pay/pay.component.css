@@ -1,0 +1,45 @@
+.pay{
+    padding-top: 1.173333rem;
+    height: 100%;
+}
+
+
+
+.state-tab {
+    display: flex;
+    text-align: center;
+    background: #ffffff;
+    margin-bottom: .133333rem;
+}
+
+.state-tab li {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    flex: 1;
+    color: #999999;
+    font-size: .426667rem;
+}
+
+.state-tab li.active {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    flex: 1;
+    color: #FF7979;
+    border-bottom: .053333rem solid #FF7979;
+    font-size: .426667rem;
+}
+
+
+.payContent{
+    background: #ffffff;
+    height: 100%;
+    text-align: center;
+}
+.payContent .code{
+    padding-top: 1.44rem;
+    margin-bottom: 1.066667rem;
+    box-sizing: border-box;
+}
+.payContent p{
+    font-size: .533333rem;
+}

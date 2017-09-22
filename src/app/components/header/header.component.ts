@@ -8,12 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input()
-  title:string="默认标题";
+  title:string="title";
   @Input()
-  right:string="right";
+  right:string="";
   constructor() { }
 
   ngOnInit() {
   }
-
+  back(){
+    window.history.back();
+  }
 }

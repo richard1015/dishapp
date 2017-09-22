@@ -11,17 +11,17 @@
       <img [src]="item.ImgUrl" alt="">
       <h1>{{item.Name}}</h1>
       <div class="row priceD">
-        <span class="price">88元</span>
+        <span class="price">{{item.Price}}</span>
         <div class="numberContain">
-          <i class="add"></i>
-          <span class="number">2</span>
-          <i class="reduce"></i>
+          <i class="reduce" (click)="item.Num=item.Num-1;sumPrice=sumPrice-item.Price" *ngIf="item.Num"></i>
+          <span class="number" *ngIf="item.Num">{{item.Num}}</span>
+          <i class="add" (click)="item.Num=item.Num+1;sumPrice;sumPrice=sumPrice+item.Price"></i>
         </div>
       </div>
     </li>
   </ul>
   <footer>
-    <span>￥78</span>
-    <button>点完了</button>
+    <span>￥{{sumPrice}}</span>
+    <button (click)="submit()">点完了</button>
   </footer>
 </div>

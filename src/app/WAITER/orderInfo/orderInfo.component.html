@@ -1,0 +1,33 @@
+<app-header [title]="tableId+'号桌订单确认'" [right]="'忌口选择'">
+</app-header>
+<div class="order-main">
+    <ul class="order-info">
+        <li><input class="style" [(ngModel)]="UserOrderingParam.Ask" type="text" name="" id="" placeholder="特殊要求（选填）"></li>
+        <li><input class="style none" [(ngModel)]="UserOrderingParam.PeoPleNum" type="number"  name="" id="" placeholder="用餐人数"></li>
+    </ul>
+    <ul class="dishInfo" *ngFor="let item of dishMenu" [hidden]="checkDishList(item.List)">
+        <h1 class="dishInfo-title">{{item.Name}}</h1>
+        <li class="row dish" *ngFor="let itemdish of item.List" [hidden]="itemdish.Num==0">
+            <!-- <div class="userinfo">
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505109438599&di=a1b147f83aeeac144ab530411d67c147&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201602%2F14%2F20160214202926_Kfixa.thumb.224_0.jpeg" alt="">
+                <br>
+                <span>阿达</span>
+            </div> -->
+            <div class="dish-details">
+                <p>{{itemdish.Name}}</p>
+                <br>
+                <span class="price">{{itemdish.Price}}￥</span>
+            </div>
+            <div class="numberContain" style="line-height: 1.6rem;">
+                <i class="reduce" (click)="itemdish.Num=itemdish.Num-1;sumPrice=sumPrice-itemdish.Price" *ngIf="itemdish.Num"></i>
+                <span class="number" *ngIf="itemdish.Num">{{itemdish.Num}}</span>
+                <i class="add" (click)="itemdish.Num=itemdish.Num+1;sumPrice;sumPrice=sumPrice+itemdish.Price"></i>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<footer>
+    <span>合计：￥{{sumPrice}}</span>
+    <span class="r" (click)="submit()">确认下单</span>
+</footer>

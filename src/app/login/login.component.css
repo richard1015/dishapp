@@ -58,3 +58,25 @@
     font-size: .453333rem;
     border-radius: 20px;
 }
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #ffffff;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ffffff;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ffffff;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #ffffff;
+}

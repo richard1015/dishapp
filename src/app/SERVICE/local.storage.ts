@@ -15,7 +15,7 @@ export class LocalStorage {
     }
 
     public get(key: string): string {
-        return this.localStorage[key] || false;
+        return this.localStorage[key] || "";
     }
 
     public setObject(key: string, value: any): void {

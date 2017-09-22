@@ -1,0 +1,30 @@
+<div class="tableMgr">
+  <app-header [title]="'桌台管理'" [right]="'新增桌台'"></app-header>
+
+  <div class="header">
+    <div class="row notify">
+      <h1>通知：</h1>
+      <br>
+      <ul>
+        <li>【锅包肉】无库存通知</li>
+        <li>【锅包肉】无库存通知</li>
+      </ul>
+    </div>
+    <ul class="state-tab">
+      <li class="active" [ngClass]="{'active': tableListParams.DtState==-1}" (click)="tableListParams.DtState=-1;getTable()">全部</li>
+      <li [ngClass]="{'active': tableListParams.DtState==1}" (click)="tableListParams.DtState=1;getTable()">已开台</li>
+      <li [ngClass]="{'active': tableListParams.DtState==0}" (click)="tableListParams.DtState=0;getTable()">空闲中</li>
+    </ul>
+  </div>
+
+  <ul class="tabContent">
+    <li (click)="choice(item)" [ngClass]="{'active': item.DtState==1}" *ngFor="let item of tableArray">
+      <h1>{{item.DtNumber}}</h1>
+
+      <span *ngIf="item.DtState==0">{{item.DtPeople}}人座</span>
+
+      <span *ngIf="item.DtState==1">￥{{item.Price}}</span>
+      <p *ngIf="item.DtState==1">{{item.DtMinute}}分钟</p>
+    </li>
+  </ul>
+</div>
