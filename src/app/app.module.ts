@@ -9,16 +9,12 @@ import { FormsModule } from '@angular/forms';
 // base
 import { AppComponent } from './app.component';
 // components 
-// import { HeaderComponent } from './components/header/header.component';
-// import { ModuleComponent } from './components/module/module.component';
 
 // login
 import { LoginComponent } from './login/login.component';
 
-
 //----------
 // import { OrderInfoComponent } from './orderInfo/orderInfo.component';
-// import { TaboosComponent } from './taboos/taboos.component';
 // import { DishProgressComponent } from './dishProgress/dishProgress.component';
 // import { AddressComponent } from './address/address.component';
 // import { OrderCheckComponent } from './orderCheck/orderCheck.component';

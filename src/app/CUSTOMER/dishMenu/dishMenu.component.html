@@ -1,5 +1,5 @@
 <div class="index-main">
-  <app-header [title]="'08号桌'" [right]="'菜品进度'"></app-header>
+  <app-header [title]="'08号桌'"></app-header>
   <ul class="left">
     <li [ngClass]="{'active': idx==pageindex}" (click)="pageindex=idx;dishlist=item.List" *ngFor="let item of dishMenu;let idx=index">
       <h1>{{item.Name}}</h1>

@@ -6,14 +6,14 @@ import { TableMgrComponent } from './tableMgr.component';
 import { TableMgrRoutes } from './tableMgr.routing';
 import { ModuleModule } from '../../components/module/module.module';
 import { HeaderModule } from '../../components/header/header.module';
-import { DishMenuComponent } from '../dishMenu/dishMenu.component';
-import { OrderInfoComponent } from '../orderInfo/orderInfo.component';
-import { OrderCheckComponent } from '../orderCheck/orderCheck.component';
-import { UpdateTableComponent } from '../updateTable/updateTable.component';
-import { DelDishComponent } from '../delDish/delDish.component';
-import { PayComponent } from '../pay/pay.component';
 import { QrcodeModule } from '../../components/qrcode/qrcode.module';
-import { TableEditComponent } from '../tableEdit/tableEdit.component';
+import { DishMenuComponent } from './dishMenu/dishMenu.component';
+import { OrderInfoComponent } from './orderInfo/orderInfo.component';
+import { OrderCheckComponent } from './orderCheck/orderCheck.component';
+import { UpdateTableComponent } from './updateTable/updateTable.component';
+import { DelDishComponent } from './delDish/delDish.component';
+import { PayComponent } from './pay/pay.component';
+import { TableEditComponent } from './tableEdit/tableEdit.component';
 
 @NgModule({
   imports: [
@@ -31,8 +31,8 @@ import { TableEditComponent } from '../tableEdit/tableEdit.component';
     OrderCheckComponent,
     UpdateTableComponent,
     DelDishComponent,
-    PayComponent,
-    TableEditComponent
+    PayComponent, 
+    TableEditComponent,
 ]
 })
 export class TableMgrModule { }

@@ -17,7 +17,9 @@ body {
 .row {
     width: 100%;
 }
-
+.t-c{
+    text-align: center;
+}
 
 
 

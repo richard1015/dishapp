@@ -1,0 +1,33 @@
+.payRefundMgr{
+    padding-top: 1.173333rem;
+    box-sizing: border-box;
+    height: 100%;
+}
+.payRefundMgr .content{
+    
+}
+.payRefundMgr table{
+    width: 100%;
+    text-align: center;
+}
+
+.payRefundMgr table thead tr{
+   background: #e5e5e5;
+   height: 1.066667rem;
+   line-height: 1.066667rem;
+   font-size: .266667rem;
+}
+.payRefundMgr table tbody tr{
+    background: #ffffff;
+    height: 1.6rem;
+    line-height: 1.6rem;
+ }
+ .payRefundMgr table tbody tr td p{
+     background: #e8d7bf;
+     height: .72rem;
+     line-height: .72rem;
+     border-radius: .266667rem;
+ }
+ .payRefundMgr table tbody tr{
+     border-bottom: .013333rem solid #f6f6f6;
+ }

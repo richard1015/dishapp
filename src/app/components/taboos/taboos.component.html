@@ -1,0 +1,28 @@
+<div class="taboos">
+    <app-header [title]="'忌口设置'" [right]="'保存'" (rightEvent)="submit($event)">
+    </app-header>
+    <div class="taboos-content">
+        <ul class="dishInfo" *ngFor="let item of dishMenu" [hidden]="checkDishList(item.List)">
+            <h1 class="dishInfo-title">{{item.Name}}</h1>
+            <li class="row dish" *ngFor="let itemdish of item.List" [hidden]="itemdish.Num==0">
+                <div class="row name">
+                    <div class="left">
+                        <p>{{itemdish.Name}}</p>
+                    </div>
+                    <div class="right">
+                        <span class="price">{{itemdish.Price}}￥</span>
+                    </div>
+                </div>
+                <div class="row lb" [hidden]="!itemdish.FNames">
+                    <ul class="lable">
+                        <li [ngClass]="{'active': itemdish.checkId==itemdish.FIds.split(',')[idx]}" 
+                        (click)="
+                        itemdish.checkId=itemdish.FIds.split(',')[idx];
+                        itemdish.checkName=itemdish.FNames.split(',')[idx]"
+                         *ngFor="let lable of itemdish.FNames.split(',');let idx=index;">{{lable}}</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LocalStorage } from '../../SERVICE/local.storage';
-import { ApiService } from '../../SERVICE/api.service';
+import { LocalStorage } from '../../../SERVICE/local.storage';
+import { ApiService } from '../../../SERVICE/api.service';
 @Component({
   selector: 'app-orderInfo',
   templateUrl: './orderInfo.component.html',
@@ -27,7 +27,11 @@ export class OrderInfoComponent implements OnInit {
   ngOnInit() {
     this.UserOrderingParam.OrderNum = this.routerInfo.snapshot.params["orderid"];
     this.dishMenu = this.ls.getObject("ls_dish");
+    console.log(this.dishMenu);
     this.sumPrice = this.ls.getObject("ls_sumPrice");
+  }
+  rightClick() {
+    this.router.navigateByUrl("/components/taboos");
   }
   checkDishList(list: [any]) {
     for (var key in list) {
@@ -50,7 +54,7 @@ export class OrderInfoComponent implements OnInit {
               Id: element.Id,
               Name: element.Name,
               Num: element.Num,
-              Taboos: ""
+              Taboos: element.checkId || ''
             });
           }
         });

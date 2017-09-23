@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ApiService } from '../../SERVICE/api.service';
 import { LocalStorage } from '../../SERVICE/local.storage';
-
+declare var layer: any;
 @Component({
   selector: 'app-tableMgr',
   templateUrl: './tableMgr.component.html',
@@ -23,6 +23,14 @@ export class TableMgrComponent implements OnInit {
   }
   tableArray = [];
   ngOnInit() {
+    var _window: any = window;
+    if (navigator.userAgent.indexOf('ydzh') != -1) {
+      try {
+        this.ls.setObject("USERINFO", { Guid: _window.ydzh.getGuid() });
+      } catch (error) {
+        layer.msg(error.message);
+      }
+    }
     this.getTable();
   }
   getTable() {
@@ -40,5 +48,9 @@ export class TableMgrComponent implements OnInit {
     } else {
       this.router.navigateByUrl("tableMgr/dishMenu");
     }
+  }
+
+  rightEvent() {
+    this.router.navigateByUrl("tableMgr/editTable");
   }
 }

@@ -1,0 +1,43 @@
+<div class="pay">
+  <app-header [title]="'买单'"></app-header>
+  <div class="content">
+    <ul class="state-tab">
+      <li class="active" [ngClass]="{'active': tab==1}" (click)="tab=1">企业收款码</li>
+      <li [ngClass]="{'active': tab==2}" (click)="tab=2">线下买单</li>
+      <li [ngClass]="{'active': tab==3}" (click)="tab=3">个人收款码</li>
+    </ul>
+
+    <div class="payContent" *ngIf="tab==1">
+      <div class="code">
+        <app-qrcode [orderid]="orderId"></app-qrcode>
+      </div>
+      <p>{{tableId}}号桌子买单</p>
+    </div>
+
+    <div class="payContentLine" *ngIf="tab==2">
+      <ul>
+        <li *ngFor="let item of payType"><span>{{item.Name}}</span><input type="number" placeholder="请输入金额" [(ngModel)]="item.Price"></li>
+      </ul>
+      <br>
+      <div class="row t-c">
+        <button (click)="submit()">保存</button>
+      </div>
+    </div>
+    <div class="payContentPersonal" *ngIf="tab==3">
+      <ul>
+        <li>
+          <img src="{{payCodeInfo.WxPayQrCode}}" alt="">
+          <p>微信支付扫这里</p>
+        </li>
+        <li>
+          <img src="{{payCodeInfo.ZfPayQrCode}}" alt="">
+          <p>支付宝支付扫这里</p>
+        </li>
+      </ul>
+      <br>
+      <div class="row t-c">
+        <button (click)="tab=2">确认已结账</button>
+      </div>
+    </div>
+  </div>
+</div>

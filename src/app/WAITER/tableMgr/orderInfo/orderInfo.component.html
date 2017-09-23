@@ -1,4 +1,4 @@
-<app-header [title]="tableId+'号桌订单确认'" [right]="'忌口选择'">
+<app-header [title]="tableId+'号桌订单确认'" [right]="'忌口选择'" (rightEvent)="rightClick($event)">
 </app-header>
 <div class="order-main">
     <ul class="order-info">
@@ -14,7 +14,7 @@
                 <span>阿达</span>
             </div> -->
             <div class="dish-details">
-                <p>{{itemdish.Name}}</p>
+                <p>{{itemdish.Name}} <span [hidden]="!itemdish.checkName">({{itemdish.checkName}})</span></p>
                 <br>
                 <span class="price">{{itemdish.Price}}￥</span>
             </div>

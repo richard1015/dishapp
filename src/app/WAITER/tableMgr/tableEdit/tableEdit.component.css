@@ -1,0 +1,26 @@
+.table-edit{
+    padding-top: 1.173333rem;
+    box-sizing: border-box;
+    font-size: .453333rem;
+    background: #ffffff;
+    height: 100%;
+}
+input{
+    border-radius: .466667rem;
+    width: 100%;
+    border: .013333rem solid red;
+    outline: none;
+    height: .933333rem;
+    margin: .333333rem 0;
+    text-align: center;
+}
+p{
+    font-size: .346667rem;
+    color: #999999;
+}
+li{
+    height: 3.733333rem;
+    border-bottom: .133333rem solid #f6f6f6;
+    padding: .666667rem;
+    box-sizing: border-box;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../SERVICE/api.service';
+import { ApiService } from '../../../SERVICE/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LocalStorage } from '../../SERVICE/local.storage';
+import { LocalStorage } from '../../../SERVICE/local.storage';
 declare var layer: any;
 @Component({
   selector: 'app-delDish',

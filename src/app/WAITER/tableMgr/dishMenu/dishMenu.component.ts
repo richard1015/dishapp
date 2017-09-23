@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService } from '../../SERVICE/api.service';
-import { LocalStorage } from '../../SERVICE/local.storage';
+import { ApiService } from '../../../SERVICE/api.service';
+import { LocalStorage } from '../../../SERVICE/local.storage';
 
 @Component({
   selector: 'app-dishMenu',
@@ -22,6 +22,7 @@ export class DishMenuComponent implements OnInit {
   sumPrice: number = 0.00;
   // 当orderId不为空时  ，需执行加菜功能
   orderid = "";
+  tableid = this.ls.get("tableid");
   ngOnInit() {
     this.orderid = this.routerInfo.snapshot.params["orderid"];
     this.api.Post({
@@ -42,7 +43,7 @@ export class DishMenuComponent implements OnInit {
     this.ls.setObject("ls_sumPrice", this.sumPrice);
     // 当orderId不为空时  ，需执行加菜功能
     if (this.orderid) {
-      this.router.navigateByUrl("/tableMgr/orderInfo/"+this.orderid);
+      this.router.navigateByUrl("/tableMgr/orderInfo/" + this.orderid);
     } else {
       this.router.navigateByUrl("/tableMgr/orderInfo");
     }

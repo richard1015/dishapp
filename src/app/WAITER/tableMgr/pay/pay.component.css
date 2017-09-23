@@ -1,0 +1,117 @@
+.pay{
+    padding-top: 1.173333rem;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.content{
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.state-tab {
+    display: flex;
+    text-align: center;
+    background: #ffffff;
+    margin-bottom: .133333rem;
+    box-sizing: border-box;
+}
+
+.state-tab li {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    flex: 1;
+    color: #999999;
+    font-size: .426667rem;
+}
+
+.state-tab li.active {
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    flex: 1;
+    color: #FF7979;
+    border-bottom: .053333rem solid #FF7979;
+    font-size: .426667rem;
+}
+
+
+.payContent{
+    text-align: center;
+    background: #ffffff;
+    height: 100%;
+}
+.payContent .code{
+    padding-top: 1.44rem;
+    margin-bottom: 1.066667rem;
+    box-sizing: border-box;
+}
+.payContent p{
+    font-size: .533333rem;
+}
+
+.payContentLine{
+    background: #ffffff;
+    height: 100%;
+    overflow: auto;
+}
+.payContentLine li{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .4rem;
+    border-bottom: 1px solid #f6f6f6;
+    padding: 0 .233333rem;
+    box-sizing: border-box;
+    position: relative;
+}
+.payContentLine input{
+    width: 5rem;  
+    height: 1rem;
+    position: absolute;
+    right: .066667rem; 
+    outline: none;
+    text-align: right;
+    box-sizing: border-box;
+    border: 0;
+}
+.payContentLine button{
+    width: 7.333333rem;
+    height: 1.066667rem;
+    outline: none;
+    border:0;
+    background: #ff7979;
+    color: #ffffff;
+    border-radius: .533333rem;
+    font-size: .453333rem;
+}
+
+.payContentPersonal{
+    background: #ffffff;
+    height: 100%;
+    overflow: auto;
+}
+.payContentPersonal img{
+    width: 3.733333rem;
+    height: 3.733333rem;
+    margin-bottom: .133333rem;
+    box-sizing: border-box;
+}
+.payContentPersonal li{
+    font-size: .4rem;
+    text-align: center;
+    height: 5.6rem;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.payContentPersonal button{
+    width: 7.333333rem;
+    height: 1.066667rem;
+    outline: none;
+    border:0;
+    background: #ff7979;
+    color: #ffffff;
+    border-radius: .533333rem;
+    font-size: .453333rem;
+}
+
+
