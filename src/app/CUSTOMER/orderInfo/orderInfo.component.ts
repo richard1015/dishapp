@@ -8,7 +8,7 @@ import { ApiService } from '../../SERVICE/api.service';
   styleUrls: ['./orderInfo.component.css']
 })
 export class OrderInfoComponent implements OnInit {
-  tableId=this.ls.get("tableid");
+  tableId = this.ls.get("tableid");
   dishMenu: any = [];
   sumPrice: number = 0.00;
   UserOrderingParam = {
@@ -51,7 +51,7 @@ export class OrderInfoComponent implements OnInit {
               Id: element.Id,
               Name: element.Name,
               Num: element.Num,
-              Taboos: ""
+              Taboos: element.checkId || ''
             });
           }
         });

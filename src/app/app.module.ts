@@ -31,6 +31,7 @@ import { AppRoutes } from './app.routing';
 import { ApiService } from './SERVICE/api.service';
 import { LocalStorage } from './SERVICE/local.storage';
 import { UploadService } from './SERVICE/upload.service';
+import { WebSocketService } from './SERVICE/webSocket.service';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { UploadService } from './SERVICE/upload.service';
   providers: [
     UploadService,
     ApiService,
+    WebSocketService,
     LocalStorage,
     {
     provide: LocationStrategy,
