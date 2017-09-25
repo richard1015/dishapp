@@ -1,5 +1,5 @@
 <div class="pt-title business">
-    <app-header [title]='"title"'></app-header>
+    <app-header [title]="shopInfo.Name"></app-header>
     <div class="business-info">
         <img src="{{shopInfo.ShopImg}}" alt="">
         <span>{{shopInfo.Name}}</span>
@@ -9,8 +9,8 @@
         <li [ngClass]="{'active': tab==2}" (click)="tab=2">商家</li>
     </ul>
     <div class="business-tab-service" *ngIf="tab==1">
-        <app-module [index]='1' [routerLink]="['dishMenu']"></app-module>
-        <app-module [index]='2'></app-module>
+        <app-module [name]="'点餐'" [imgUrl]="'/assets/imgs/diancan.png'" [linkUrl]="'customer/dishMenu'"></app-module>
+        <app-module [name]="'买单'" [imgUrl]="'/assets/imgs/maidan.png'"></app-module>
     </div>
     <div class="business-tab-business" *ngIf="tab==2">
         <ul>

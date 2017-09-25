@@ -1,5 +1,5 @@
-<div class="module">
+<div class="module" (click)="clickUrl()">
     <img src="assets/imgs/item-back.png" alt="">
-    <i [ngStyle]="{'background-image': item.icon}"></i>
-    <span>{{item.name}}</span>
+    <i [ngStyle]="{'background-image': 'url('+imgUrl+')'}"></i>
+    <p>{{name}}</p>
 </div>

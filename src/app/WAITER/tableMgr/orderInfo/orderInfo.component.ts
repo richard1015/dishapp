@@ -16,7 +16,7 @@ export class OrderInfoComponent implements OnInit {
     Ask: "",
     PeoPleNum: "",
     Menus: [],
-    ShopTableId: this.ls.get("tableid"),
+    ShopTableId: this.ls.get("tableidd"),
     OrderPeopleType: 1,
     OrderNum: ""
   };

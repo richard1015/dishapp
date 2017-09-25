@@ -59,7 +59,7 @@ export class IndexComponent implements OnInit {
         }, "UserGetOrderState").subscribe((res) => {
             if (res.State == 0) {
                 if (res.Value == true) {
-                   // this.router.navigateByUrl(`customer/orderCheck/${res.TotalString}`);
+                    this.router.navigateByUrl(`customer/orderCheck/${res.TotalString}`);
                 }
             }
         });

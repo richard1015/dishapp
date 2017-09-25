@@ -23,6 +23,7 @@ export class DishMenuComponent implements OnInit {
   // 当orderId不为空时  ，需执行加菜功能
   orderid = "";
   tableid = this.ls.get("tableid");
+  tableidd = this.ls.get("tableidd");
   ngOnInit() {
     this.orderid = this.routerInfo.snapshot.params["orderid"];
     this.api.Post({

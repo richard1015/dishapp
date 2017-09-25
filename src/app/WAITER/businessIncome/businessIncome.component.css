@@ -1,0 +1,82 @@
+.businessIncome{
+    padding-top: 1.173333rem;
+    box-sizing: border-box;
+    height: 100%;
+}
+.businessIncome .shop-info{
+    height: 3.4rem;
+    margin-bottom: .133333rem;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: .266667rem;
+}
+.shop-info h1{
+   font-size: .453333rem;
+   font-weight: bold;
+}
+.shop-info .date label{
+    font-size: .4rem;
+}
+.shop-info .date span{
+    font-size: .373333rem;
+    color: #ff7979;
+    border: 1px solid #ff7979;
+    border-radius: .266667rem;
+    padding: 0 .24rem;
+    box-sizing: border-box;
+    margin:0 .133333rem;
+}
+.shop-info .date span.active{
+    color: #ffffff;
+    background: #ff7979;
+}
+.shop-info .dateChoice input{
+    border:0;
+    color: #666666;
+}
+.shop-info .dateChoice button{
+    font-size: .373333rem;
+    color: #ffffff;
+    background: #ff7979;
+    border: 0;
+    border-radius: .266667rem;
+    padding: 0 .24rem;
+    box-sizing: border-box;
+}
+.businessIncome .shopPrice{
+    background: #ffffff;
+    height: 2.666667rem;
+    box-sizing: border-box;
+    padding: .266667rem;
+}
+.businessIncome .shopPrice li{
+    height: 2rem;
+    width: 4.546667rem;
+    background: #78ace1;
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    border-radius: .066667rem;
+    font-size: .4rem;
+}
+.businessIncome .shopPrice li:last-child{
+    background: #58bc74;
+    float: right;
+}
+table{
+    font-size: .266667rem;
+    text-align: center;
+}
+table thead tr{
+    height: 1.066667rem;
+    line-height: 1.066667rem;
+    background: #e5e5e5;
+}
+table tbody tr{
+    height: 1.6rem;
+    line-height: 1.6rem;
+    background: #ffffff;
+    font-size: .346667rem;
+    color: #666666;
+    border-bottom: 1px solid #f6f6f6;
+}

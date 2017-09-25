@@ -2,11 +2,11 @@
     <img src="/assets/imgs/zhihuicanting.png" alt="">
     <div class="form username">
         <input type="text" [(ngModel)]="tableListParams.Phone" placeholder="请输入手机号" name="" id="">
-        <i></i>
+        <i *ngIf="tableListParams.Phone" (click)="tableListParams.Phone=''"></i>
     </div>
     <div class="form pwd">
         <input type="password" [(ngModel)]="tableListParams.Pwd" placeholder="请输入密码" name="" id="">
-        <i></i>
+        <i *ngIf="tableListParams.Pwd" (click)="tableListParams.Pwd=''"></i>
     </div>
     <button (click)="submit()">登录</button>
 </div>

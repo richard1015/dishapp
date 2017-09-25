@@ -5,12 +5,16 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     // --------------顾客-------------------- //
     { path: 'customer', loadChildren: "app/CUSTOMER/index/index.module#IndexModule" },
-    // 桌台模块
+    // 桌台管理
     { path: 'tableMgr', loadChildren: "app/WAITER/tableMgr/tableMgr.module#TableMgrModule" },
-    // 退款模块
+    // 退款处理
     { path: 'payRefundMgr', loadChildren: "app/WAITER/payRefundMgr/payRefundMgr.module#PayRefundMgrModule" },
-    // 公用模块
+     // 营业收入
+     { path: 'businessIncome',loadChildren: "app/WAITER/businessIncome/businessIncome.module#BusinessIncomeModule" },
+    // 忌口选择
     { path: 'components/taboos',loadChildren: "app/components/taboos/taboos.module#TaboosModule" },
+    // 我的模块
+    { path: 'components/myModule',loadChildren: "app/components/myModule/myModule.module#MyModuleModule" },
     { path: '**', component: LoginComponent }
 ];
 

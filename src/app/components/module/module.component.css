@@ -11,7 +11,7 @@
 }
 
 .module i {
-    background-image: url('/assets/imgs/diancan.png');
+    /* background-image: url('/assets/imgs/diancan.png'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -23,10 +23,11 @@
     left: 1.04rem;
 }
 
-.module span {
+.module p {
     font-size: .4rem;
     color: #564a38;
     position: absolute;
     top: 1.866667rem;
-    left: 1.04rem;
+    width: 100%;
+    text-align: center;
 }

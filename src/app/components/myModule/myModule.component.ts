@@ -4,22 +4,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorage } from '../../SERVICE/local.storage';
 
 @Component({
-  selector: 'app-payRefundMgr',
-  templateUrl: './payRefundMgr.component.html',
-  styleUrls: ['./payRefundMgr.component.css']
+  selector: 'app-mymodule',
+  templateUrl: './myModule.component.html',
+  styleUrls: ['./myModule.component.css']
 })
-export class PayRefundMgrComponent implements OnInit {
+export class MyModuleComponent implements OnInit {
+
+  //用户所有权限
+  userJurs = [];
 
   constructor(private api: ApiService,
     private routerInfo: ActivatedRoute,
     private router: Router,
     private ls: LocalStorage) { }
 
-  payRefundInfo = [];
   ngOnInit() {
-    this.api.Post({}, "StaffReturnManager").subscribe(res => {
+    this.getUserJurs();
+  }
+  getUserJurs() {
+    this.api.Post({}, "UserJurs").subscribe(res => {
       if (res.State == 0) {
-        this.payRefundInfo = res.Value;
+        this.userJurs = res.Value;
       }
     });
   }

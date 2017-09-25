@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.api.Post(this.tableListParams, "ShopUserLogin").subscribe((res) => {
       if (res.State == 0) {
         this.ls.setObject("USERINFO", { Guid: res.Value });
-        this.router.navigateByUrl("/tableMgr");
+        this.router.navigateByUrl("/components/myModule");
       }
     });
   }

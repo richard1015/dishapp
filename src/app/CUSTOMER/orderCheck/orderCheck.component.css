@@ -67,6 +67,13 @@ li .right {
     text-align: right;
 }
 
+.code{
+    padding-top: 1.44rem;
+    margin-bottom: 1.066667rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
 footer {
     display: flex;
     height: 1.333333rem;

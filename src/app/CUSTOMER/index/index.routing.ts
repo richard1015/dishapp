@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'dishMenu', component: DishMenuComponent },
   { path: 'orderInfo', component: OrderInfoComponent },
   { path: 'orderCheck/:orderid', component: OrderCheckComponent }
-  
 ];
 
 export const IndexRoutes = RouterModule.forChild(routes);

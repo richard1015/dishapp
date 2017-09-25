@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-module',
   templateUrl: './module.component.html',
@@ -7,17 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ModuleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routerInfo: ActivatedRoute,
+    private router: Router) { }
   @Input()
-  index = 0;
+  name = "";
+  @Input()
+  imgUrl = "";
+  @Input()
+  linkUrl = "";
 
-  iconArray = [
-    { id: 1, name: "点餐", icon: "url('/assets/imgs/diancan.png')" },
-    { id: 2, name: "买单", icon: "url('/assets/imgs/maidan.png')" }
-  ];
-
-  item: any = {};
   ngOnInit() {
-    this.item = this.iconArray.find(i => this.index == i.id);
+
+  }
+  clickUrl() {
+    if (this.linkUrl) {
+      this.router.navigateByUrl(this.linkUrl);
+    }
   }
 }

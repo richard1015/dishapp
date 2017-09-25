@@ -33,6 +33,7 @@ export class TableMgrComponent implements OnInit {
   }
   choice(item) {
     this.ls.set("tableid", item.DtNumber);
+    this.ls.set("tableidd", item.Id);
     if (item.DtState == 1) {
       this.router.navigateByUrl(`tableMgr/orderCheck/${item.OrderNumber}`);
     } else {

@@ -1,0 +1,7 @@
+<app-header [title]="'我的模块'">
+</app-header>
+<ul class="mymodule-list">
+  <li class="mymodule-item" *ngFor="let item of userJurs">
+      <app-module [name]="item.JName" [imgUrl]="item.JurisImage" [linkUrl]="item.JumpUrlH5"></app-module>
+  </li>
+</ul>

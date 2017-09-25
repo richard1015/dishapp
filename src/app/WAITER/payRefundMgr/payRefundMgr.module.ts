@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PayRefundMgrComponent } from './payRefundMgr.component';
 import { PayRefundMgrRoutes } from './payRefundMgr.routing';
 import { HeaderModule } from '../../components/header/header.module';
+import { DelDishComponent } from './delDish/delDish.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { HeaderModule } from '../../components/header/header.module';
     HeaderModule
   ],
   declarations: [
-    PayRefundMgrComponent
+    PayRefundMgrComponent,
+    DelDishComponent
   ]
 })
 export class PayRefundMgrModule { }

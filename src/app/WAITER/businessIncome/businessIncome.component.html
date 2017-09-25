@@ -1,0 +1,38 @@
+<div class="businessIncome">
+  <app-header [title]="'营业收入'"></app-header>
+  <div class="row shop-info">
+    <h1>{{businessIncomeInfo.ShopName}}</h1>
+    <br>
+    <div class="row date">
+      <label for="">日期范围</label>
+      <span [ngClass]="{'active': dateType==1}" (click)="dateChoice(1)">今天</span>
+      <span [ngClass]="{'active': dateType==-1}" (click)="dateChoice(-1)">昨天</span>
+      <span [ngClass]="{'active': dateType==7}" (click)="dateChoice(7)">近7天</span>
+      <span [ngClass]="{'active': dateType==30}" (click)="dateChoice(30)">近30天</span>
+    </div>
+    <br>
+    <div class="row dateChoice">
+      <input type="date" name="" id="" [(ngModel)]="businessIncomeInfoParams.StarTime"> 至  
+      <input type="date" name="" id="" [(ngModel)]="businessIncomeInfoParams.EndTime">
+      <button (click)="getBusinessIncomeInfo()">查询</button>
+    </div>
+  </div>
+  <ul class="row shopPrice">
+    <li><br>应收<br>￥{{businessIncomeInfo.Receivable}}</li>
+    <li><br>实收<br>￥{{businessIncomeInfo.Actual}}</li>
+  </ul>
+  <table class="row">
+    <thead>
+      <tr>
+        <td>渠道名称</td>
+        <td>收入</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of businessIncomeInfo.List">
+        <td>{{getPayName(item.PayMode)}}</td>
+        <td>{{item.Price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

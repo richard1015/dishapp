@@ -9,6 +9,7 @@ import { IndexRoutes } from './index.routing';
 import { DishMenuComponent } from '../dishMenu/dishMenu.component';
 import { OrderInfoComponent } from '../orderInfo/orderInfo.component';
 import { OrderCheckComponent } from '../orderCheck/orderCheck.component';
+import { QrcodeModule } from '../../components/qrcode/qrcode.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OrderCheckComponent } from '../orderCheck/orderCheck.component';
     IndexRoutes,
     ModuleModule,
     HeaderModule,
-    FormsModule
+    FormsModule,
+    QrcodeModule
   ]
 })
 export class IndexModule { }

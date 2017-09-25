@@ -30,13 +30,6 @@ export class OrderCheckComponent implements OnInit {
     });
   }
   pay() {
-    this.api.Post({
-      OrderNo: this.orderId,
-      PayType: "wx"
-    }, "DianPay").subscribe((res) => {
-      if (res.State == 0) {
-        alert(res.Value);
-      }
-    });
+    
   }
 }
