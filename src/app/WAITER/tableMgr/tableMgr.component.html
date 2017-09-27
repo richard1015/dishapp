@@ -1,13 +1,11 @@
-<div class="tableMgr">
-  <app-header [title]="'桌台管理'" [right]="'新增桌台'" (rightEvent)="rightEvent($event)"></app-header>
+<div class="tableMgr" [ngClass]="{'notifyNo': notifyList.length==0}">
+  <app-header [title]="'桌台管理'" [right]="'新增桌台'" (rightEvent)="rightEvent($event)"  [appClose]="true"></app-header>
 
   <div class="header">
-    <div class="row notify">
-      <h1>通知：</h1>
-      <br>
+    <div class="row notify" *ngIf="notifyList.length>0">
+      <span>通知：</span>
       <ul>
-        <li>【锅包肉】无库存通知</li>
-        <li>【锅包肉】无库存通知</li>
+        <li *ngFor="let item of notifyList" [routerLink]="['dishNotify',item.MenuId,item.MenuName]">【{{item.MenuName}}】无库存通知<i></i></li>
       </ul>
     </div>
     <ul class="state-tab">

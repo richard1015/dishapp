@@ -27,7 +27,7 @@ export class OrderInfoComponent implements OnInit {
     this.dishMenu = this.ls.getObject("ls_dish");
     this.sumPrice = this.ls.getObject("ls_sumPrice");
   }
-  rightClick() {
+  rightClick(item) {
     this.router.navigateByUrl("/components/taboos");
   }
   checkDishList(list: [any]) {

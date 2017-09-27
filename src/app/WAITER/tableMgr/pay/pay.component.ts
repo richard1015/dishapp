@@ -31,10 +31,7 @@ export class PayComponent implements OnInit {
     "OrderNum": "",
     "PayMode": []
   };
-  payCodeInfo = {
-    "WxPayQrCode": "",
-    "ZfPayQrCode": ""
-  }
+  payCodeInfo;
   ngOnInit() {
     this.orderId = this.routerInfo.snapshot.params["orderid"];
     this.tableId = this.routerInfo.snapshot.params["tableid"];

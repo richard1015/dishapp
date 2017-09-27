@@ -15,7 +15,9 @@ export class BusinessIncomeComponent implements OnInit {
     private router: Router,
     private ls: LocalStorage) { }
 
-  businessIncomeInfo = {};
+  businessIncomeInfo = {
+    List: []
+  };
   businessIncomeInfoParams = {
     "ShopId": "0",
     "StarTime": "",
@@ -23,7 +25,7 @@ export class BusinessIncomeComponent implements OnInit {
   }
   dateType = 1;
   dateChoice(datetype) {
-    this.dateType=datetype;
+    this.dateType = datetype;
     switch (datetype) {
       // 昨天
       case -1:

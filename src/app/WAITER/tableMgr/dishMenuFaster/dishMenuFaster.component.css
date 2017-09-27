@@ -1,0 +1,114 @@
+header {
+    height: 1.173333rem;
+    line-height: 1.173333rem;
+    width: 100%;
+    background: #FF7979;
+    color: #FFFFFF;
+    top: 0;
+    padding: 0 .266667rem;
+    box-sizing: border-box;
+}
+header .back{
+    position: relative;
+    width: 2.4rem;
+    display: inline-block;
+}
+header span{
+   margin-left:.466667rem;
+}
+header i{
+    background: url('/assets/imgs/baisejiantou.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .253333rem;
+    height: .48rem;
+    line-height: .48rem;
+    position: absolute;
+    top: .3rem;
+}
+.search{
+    width: 6.8rem;
+    float: right;
+}
+.search input{
+    width: 6.866667rem;
+    height: .8rem;
+    border: 0;
+    background: #ffffff;
+    border-radius: .4rem;
+    outline: none;
+    text-indent: .506667rem;
+}
+
+.notify{
+    background: #e8d7bf;
+    height: 2.4rem;
+    position: relative;
+    padding: .266667rem;
+    box-sizing: border-box;
+    color: #855717;
+}
+.notify h1{
+    font-size: .426667rem;
+}
+.notify p{
+    font-size: .373333rem;
+}
+
+.left{
+    width: 6.666667rem;
+    float: left;
+}
+
+.right {
+    height: 100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background: #ffffff;
+}
+
+.right li {
+    box-sizing: border-box;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .4rem;
+    width: 100%;
+    padding:0 .266667rem;
+    box-sizing: border-box;
+    border-bottom: .013333rem solid #f6f6f6;
+}
+
+.right .price {
+    color: #FF7979;
+    float: right;
+}
+
+.count {
+    display: flex;
+    font-size: .48rem;
+    padding:.933333rem .266667rem;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.count span {
+    flex: 1;
+}
+
+.count span.r {
+    flex: 1;
+    color: #FF7979;
+}
+button {
+    width: 2.666667rem;
+    height: .8rem;
+    background: #FF7979;
+    color: #FFFFFF;
+    font-size: .453333rem;
+    border-radius: .4rem;
+    border: 0;
+    outline: none;
+    right: .266667rem;
+    top: .266667rem;
+}

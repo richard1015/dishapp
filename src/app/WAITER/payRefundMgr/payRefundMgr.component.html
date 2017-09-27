@@ -1,5 +1,5 @@
 <div class="payRefundMgr">
-  <app-header [title]="'退款'"></app-header>
+  <app-header [title]="'退款'" [appClose]="true"></app-header>
   <div class="content">
     <table>
       <thead>
@@ -15,7 +15,7 @@
           <td>{{item.DtNumber}}</td>
           <td>￥{{item.Price}}</td>
           <td>{{item.CreateTime}}</td>
-          <td><p  [routerLink]="['/payRefundMgr/delDish',item.Id]">退款</p></td>
+          <td><p [routerLink]="['/payRefundMgr/delDish',item.Id]">退款</p></td>
         </tr>
       </tbody>
     </table>

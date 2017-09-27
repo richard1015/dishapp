@@ -21,7 +21,7 @@ export class TableEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  rightEvent() {
+  rightEvent(item) {
     this.api.Post(this.editTableParams, "BGetTableAdd").subscribe(res => {
       if (res.State == 0) {
         layer.msg(res.Msg);

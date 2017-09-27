@@ -21,11 +21,36 @@
         </div>
     </div>
 
-   <ul class="footer">
-       <li [routerLink]="['/tableMgr/dishMenu',orderId]"><i class="jiacai"></i><p>加菜</p></li>
-       <li [routerLink]="['/tableMgr/delDish',orderId]"><i class="huacai"></i><p>划菜</p></li>
-       <li><i class="xiaopiao"></i><p>小票</p></li>
-       <li [routerLink]="['/tableMgr/updateTable',orderId,orderInfo.TableId]"><i class="zhuantai"></i><p>转台</p></li>
-       <li [routerLink]="['/tableMgr/pay',orderId,orderInfo.DtNumber]"><i class="maidan"></i><p>买单</p></li>
-   </ul>
+    <ul class="footer">
+        <li [routerLink]="['/tableMgr/dishMenu',orderId]">
+            <div>
+                <i class="jiacai"></i>
+                <p>加菜</p>
+            </div>
+        </li>
+        <li [routerLink]="['/tableMgr/delDish',orderId]">
+            <div>
+                <i class="huacai"></i>
+                <p>划菜</p>
+            </div>
+        </li>
+        <li (click)="print()">
+            <div>
+                <i class="xiaopiao"></i>
+                <p>小票</p>
+            </div>
+        </li>
+        <li [routerLink]="['/tableMgr/updateTable',orderId,orderInfo.TableId]">
+            <div>
+                <i class="zhuantai"></i>
+                <p>转台</p>
+            </div>
+        </li>
+        <li [routerLink]="['/tableMgr/pay',orderId,orderInfo.DtNumber]">
+            <div>
+                <i class="maidan"></i>
+                <p>买单</p>
+            </div>
+        </li>
+    </ul>
 </div>

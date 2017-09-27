@@ -3,7 +3,7 @@
   <ul class="left">
     <li [ngClass]="{'active': idx==pageindex}" (click)="pageindex=idx;dishlist=item.List" *ngFor="let item of dishMenu;let idx=index">
       <h1>{{item.Name}}</h1>
-      <p>{{item.Count}}</p>
+      <p *ngIf="item.Count">{{item.Count}}</p>
     </li>
   </ul>
   <ul class="right">
@@ -13,9 +13,9 @@
       <div class="row priceD">
         <span class="price">{{item.Price}}</span>
         <div class="numberContain">
-          <i class="reduce" (click)="item.Num=item.Num-1;sumPrice=sumPrice-item.Price" *ngIf="item.Num"></i>
+          <i class="reduce" (click)="item.Num=item.Num-1;sumPrice=sumPrice-item.Price;dishMenu[pageindex].Count=dishMenu[pageindex].Count-1" *ngIf="item.Num"></i>
           <span class="number" *ngIf="item.Num">{{item.Num}}</span>
-          <i class="add" (click)="item.Num=item.Num+1;sumPrice;sumPrice=sumPrice+item.Price"></i>
+          <i class="add" (click)="item.Num=item.Num+1;sumPrice=sumPrice+item.Price;dishMenu[pageindex].Count=dishMenu[pageindex].Count+1"></i>
         </div>
       </div>
     </li>

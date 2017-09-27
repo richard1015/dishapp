@@ -1,0 +1,10 @@
+<div class="dishNotify">
+  <app-header [title]="'无库存通知'"></app-header>
+  <div class="dishNotify-content">
+    <h1>【{{dishName}}】无库存，请您通知以下桌台</h1>
+    <ul>
+      <li *ngFor="let item of notifyTableList">{{item.DtName}}</li>
+    </ul>
+  </div>
+  <footer (click)="submit()"><p>已通知顾客</p></footer>
+</div>

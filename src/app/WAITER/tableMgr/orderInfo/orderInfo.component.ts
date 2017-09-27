@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LocalStorage } from '../../../SERVICE/local.storage';
 import { ApiService } from '../../../SERVICE/api.service';
+declare var layer:any;
 @Component({
   selector: 'app-orderInfo',
   templateUrl: './orderInfo.component.html',
@@ -13,8 +14,8 @@ export class OrderInfoComponent implements OnInit {
   sumPrice: number = 0.00;
   tableId = this.ls.get("tableid");
   UserOrderingParam = {
-    Ask: "",
-    PeoPleNum: "",
+    Ask: this.ls.getObject("ask").Ask || "",
+    PeoPleNum: this.ls.getObject("ask").PeoPleNum || "",
     Menus: [],
     ShopTableId: this.ls.get("tableidd"),
     OrderPeopleType: 1,
@@ -30,7 +31,11 @@ export class OrderInfoComponent implements OnInit {
     console.log(this.dishMenu);
     this.sumPrice = this.ls.getObject("ls_sumPrice");
   }
-  rightClick() {
+  rightClick(item) {
+    this.ls.setObject("ask", {
+      Ask: this.UserOrderingParam.Ask,
+      PeoPleNum: this.UserOrderingParam.PeoPleNum
+    });
     this.router.navigateByUrl("/components/taboos");
   }
   checkDishList(list: [any]) {
@@ -74,5 +79,6 @@ export class OrderInfoComponent implements OnInit {
         }
       });
     }
+    layer.msg("下单成功！");
   }
 }

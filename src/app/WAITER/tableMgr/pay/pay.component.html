@@ -4,7 +4,7 @@
     <ul class="state-tab">
       <li class="active" [ngClass]="{'active': tab==1}" (click)="tab=1">企业收款码</li>
       <li [ngClass]="{'active': tab==2}" (click)="tab=2">线下买单</li>
-      <li [ngClass]="{'active': tab==3}" (click)="tab=3">个人收款码</li>
+      <li [ngClass]="{'active': tab==3}" (click)="tab=3" *ngIf="payCodeInfo">个人收款码</li>
     </ul>
 
     <div class="payContent" *ngIf="tab==1">
@@ -16,6 +16,7 @@
 
     <div class="payContentLine" *ngIf="tab==2">
       <ul>
+        <li class="t-c" style="color:red;">请录入顾客实际结账金额，便于收银统计营业收入</li>
         <li *ngFor="let item of payType"><span>{{item.Name}}</span><input type="number" placeholder="请输入金额" [(ngModel)]="item.Price"></li>
       </ul>
       <br>

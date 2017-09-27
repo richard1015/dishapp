@@ -24,7 +24,7 @@ export class IndexComponent implements OnInit {
         this.ls.set("tableid", tableid);
         this.ls.set("shopid", shopid);
         //支付宝授权
-        //this.alAuth(auth_code);
+        // this.alAuth(auth_code);
         this.getUserState(tableid);
         //获取商家信息
         this.api.Post({

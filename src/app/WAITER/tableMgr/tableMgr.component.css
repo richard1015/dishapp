@@ -3,12 +3,15 @@
     box-sizing: border-box;
     height: 100%;
 }
+.tableMgr.notifyNo{
+    padding: 2.773333rem 0 0 0;
+}
 
 .header{
     position: fixed;
     width: 100%;
     top: 1.173333rem;
-    height: 4.666667rem;
+    /* height: 4.666667rem; */
     z-index: 1;
 }
 
@@ -16,20 +19,41 @@
     height: 3.066667rem;
     color: #855717;
     background: #e8d7bf;
-    padding-left: .266667rem;
+    padding: .266667rem;
     box-sizing: border-box;
+    overflow-y: auto;
 }
-.notify h1{
+.notify span{
     font-size: .426667rem;
+    float: left;
+    height: 100%;
 }
 .notify ul{
-    list-style: disc;
+    float: right;
 }
 .notify li{
     font-size: .4rem;
+    width: 8rem;
+    height: .8rem;
+    line-height: .8rem;
+    background: #ffffff;
+    border-radius: .4rem;
+    margin-bottom: .32rem;
+    padding-left:1.333333rem;
+    box-sizing: border-box;
+    position: relative;
 }
-
-
+.notify li i{
+    background: url('/assets/imgs/huisejiantou.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .4rem;
+    height: .4rem;
+    right: .32rem;
+    top: .153333rem;
+    position: absolute;
+}
 
 .state-tab {
     display: flex;
@@ -61,7 +85,7 @@
     box-sizing: border-box;
     text-align: center;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow: auto;
 }
 .tabContent li{
     width: 2.84rem;

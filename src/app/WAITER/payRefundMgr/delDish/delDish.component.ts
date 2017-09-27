@@ -42,7 +42,7 @@ export class DelDishComponent implements OnInit {
       }
     }
   }
-  rightEvent() {
+  rightEvent(item) {
     if (this.delDishArray.length > 0) {
       this.api.Post({
         "OrderMenuId": this.orderId,

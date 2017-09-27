@@ -1,0 +1,46 @@
+.dishNotify{
+    padding: 1.173333rem 0 1.333333rem 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #ffffff;
+    overflow: auto;
+}
+h1{
+    text-align: center;
+    font-size: .4rem;
+    margin: 1.2rem 0;
+}
+ul{
+    margin: 0 auto;
+}
+li{
+   width: 2.666667rem; 
+   height: 2.666667rem; 
+   line-height: 2.666667rem; 
+   border-radius: 1.333333rem;
+   text-align: center;
+   background: #e8d7bf;
+   float: left;
+   margin: .33333rem;
+}
+
+
+.dishNotify-content{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+footer{
+    text-align: center;
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    background: #FF7979;
+    font-size: .453333rem;
+}

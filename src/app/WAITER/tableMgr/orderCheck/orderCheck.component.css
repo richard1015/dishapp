@@ -54,6 +54,9 @@ li .left {
     flex: 1;
     font-size: .453333rem;
     text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 li .center {
@@ -79,15 +82,19 @@ li .right {
 .footer li {
     height: 1.333333rem;
     flex: 1;
+    display: flex;
     font-size: .373333rem;
     color: #c7c7c7;
     background: #594940;
-    text-align: center;
+}
+.footer li div{
     position: relative;
+    flex: 1;
 }
 .footer li p{
     width: 100%;
     padding-top: .3rem;
+    text-align: center;
 }
 .footer li i{
     background-repeat: no-repeat;
@@ -98,7 +105,8 @@ li .right {
     height: .533333rem;
     position: absolute;
     top: .066667rem;
-    left:.766667rem;
+    left:50%;
+    transform: translateX(-50%);
 }
 .footer li i.jiacai{
     background-image:url("/assets/imgs/jiacaii.png");

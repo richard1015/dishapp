@@ -1,0 +1,33 @@
+<div class="dishMenuFaster">
+    <header>
+        <div class="back" (click)="back()"><i></i><span>返回</span></div>
+        <div class="search">
+            <input type="text" [(ngModel)]="py" (keyup)="search()">
+        </div>
+    </header>
+    <div class="row notify">
+        <h1>快点模式说明：</h1>
+        <br>
+        <p>您只需要输入【菜品，酒水，饮料】的首字母，例如：找锅包肉时输入g就可以了。</p>
+    </div>
+
+    <ul class="right">
+        <li *ngFor="let item of dishlist">
+            <div class="left">
+                <span>{{item.Name}}</span>
+                <span class="price">￥{{item.Price}}</span>
+            </div>
+            <div class="numberContain">
+                <i class="reduce" (click)="item.Num=item.Num-1;sumPrice=sumPrice-item.Price" *ngIf="item.Num"></i>
+                <span class="number" *ngIf="item.Num">{{item.Num}}</span>
+                <i class="add" (click)="item.Num=item.Num+1;sumPrice=sumPrice+item.Price"></i>
+            </div>
+        </li>
+    </ul>
+    <div class="count">
+        <span>总计：</span>
+        <span class="r">￥{{sumPrice}}</span>
+        <button (click)="submit()">点完了</button>
+    </div>
+
+</div>

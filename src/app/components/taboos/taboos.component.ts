@@ -29,7 +29,7 @@ export class TaboosComponent implements OnInit {
     }
     return true;
   }
-  submit() {
+  submit(item) {
     this.ls.setObject("ls_dish", this.dishMenu);
     window.history.back();
   }

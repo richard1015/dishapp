@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../SERVICE/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LocalStorage } from '../../SERVICE/local.storage';
-
+declare var layer: any;
 @Component({
   selector: 'app-orderCheck',
   templateUrl: './orderCheck.component.html',
@@ -18,6 +18,7 @@ export class OrderCheckComponent implements OnInit {
   orderInfo: any = {};
   orderId = "";
   ngOnInit() {
+    layer.msg("下单成功！");
     this.orderId = this.routerInfo.snapshot.params["orderid"];
     this.api.Post({
       OrderNumber: this.orderId,
@@ -30,6 +31,6 @@ export class OrderCheckComponent implements OnInit {
     });
   }
   pay() {
-    
+
   }
 }

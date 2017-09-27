@@ -16,7 +16,7 @@ export class DelDishComponent implements OnInit {
     private ls: LocalStorage) { }
 
   orderId = "";
-  orderInfo = {};
+  orderInfo;
   ngOnInit() {
     this.orderId = this.routerInfo.snapshot.params["orderid"];
     this.api.Post({
