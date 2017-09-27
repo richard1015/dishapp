@@ -16,7 +16,10 @@ export class BusinessIncomeComponent implements OnInit {
     private ls: LocalStorage) { }
 
   businessIncomeInfo = {
-    List: []
+    List: [],
+    ShopName:"",
+    Receivable:0,
+    Actual:0
   };
   businessIncomeInfoParams = {
     "ShopId": "0",
