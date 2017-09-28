@@ -21,11 +21,13 @@ export class UpdateTableComponent implements OnInit {
   }
 
   orderId = "";
-  tableId="";
+  tableName = "";
+  tableId = "";
   tableArray = [];
   ngOnInit() {
     this.orderId = this.routerInfo.snapshot.params["orderid"];
-    this.tableId=this.routerInfo.snapshot.params["tableid"];
+    this.tableId = this.ls.get("tableidd");
+    this.tableName = this.ls.get("tableid");
     this.getTable();
   }
   getTable() {
@@ -38,7 +40,7 @@ export class UpdateTableComponent implements OnInit {
   }
   choice(item) {
     this.api.Post({
-      OldId:this.tableId,
+      OldId: this.tableId,
       NewId: item.Id,
       OrderNumber: this.orderId
     }, "BGetTableChange").subscribe((res) => {

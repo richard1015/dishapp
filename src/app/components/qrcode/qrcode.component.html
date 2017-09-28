@@ -1,1 +1,9 @@
 <qr-code *ngIf="paylink" [value]="paylink" [size]="128"></qr-code>
+<p>{{payTypeName}}</p>
+<div *ngIf="!payType">
+    <p>请选择支付方式</p>
+    <br>
+    <br>
+    <button (click)="pay('wx')">微信支付</button>
+    <button (click)="pay('alipay')">支付宝支付</button>
+</div>

@@ -8,15 +8,15 @@
     <ul class="dishInfo" *ngFor="let item of dishMenu" [hidden]="checkDishList(item.List)">
         <h1 class="dishInfo-title">{{item.Name}}</h1>
         <li class="row dish" *ngFor="let itemdish of item.List" [hidden]="itemdish.Num==0">
-            <div class="userinfo">
+            <!-- <div class="userinfo">
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505109438599&di=a1b147f83aeeac144ab530411d67c147&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201602%2F14%2F20160214202926_Kfixa.thumb.224_0.jpeg" alt="">
                 <br>
                 <span>阿达</span>
-            </div>
+            </div> -->
             <div class="dish-details">
                 <p>{{itemdish.Name}} <span [hidden]="!itemdish.checkName">({{itemdish.checkName}})</span></p>
                 <br>
-                <span class="price">{{itemdish.Price}}￥</span>
+                <span class="price">￥{{itemdish.Price}}</span>
             </div>
             <div class="numberContain" style="line-height: 1.6rem;">
                 <i class="reduce" (click)="itemdish.Num=itemdish.Num-1;sumPrice=sumPrice-itemdish.Price" *ngIf="itemdish.Num"></i>
@@ -136,6 +136,6 @@
 </div>
 
 <footer>
-    <span>合计：￥{{sumPrice}}</span>
+    <span>合计：￥{{sumPrice.toFixed(2)}}</span>
     <span class="r" (click)="submit()">确认下单</span>
 </footer>

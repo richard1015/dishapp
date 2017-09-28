@@ -11,7 +11,7 @@
       <div class="code">
         <app-qrcode [orderid]="orderId"></app-qrcode>
       </div>
-      <p>{{tableId}}号桌子买单</p>
+      <p>{{tableId}}号桌买单</p>
     </div>
 
     <div class="payContentLine" *ngIf="tab==2">
@@ -26,11 +26,11 @@
     </div>
     <div class="payContentPersonal" *ngIf="tab==3">
       <ul>
-        <li>
+        <li *ngIf="payCodeInfo.WxPayQrCode">
           <img src="{{payCodeInfo.WxPayQrCode}}" alt="">
           <p>微信支付扫这里</p>
         </li>
-        <li>
+        <li *ngIf="payCodeInfo.ZfPayQrCode">
           <img src="{{payCodeInfo.ZfPayQrCode}}" alt="">
           <p>支付宝支付扫这里</p>
         </li>

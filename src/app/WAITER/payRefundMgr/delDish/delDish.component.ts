@@ -50,6 +50,7 @@ export class DelDishComponent implements OnInit {
       }, "StaffRefund").subscribe((res) => {
         if (res.State == 0) {
           layer.msg(res.Msg);
+          window.history.back();
         }
       });
     } else {

@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let item of orderInfo">
       <span class="left">{{item.ShopMenuName}}</span>
-      <span class="center">￥{{item.UnitPrice}}X{{item.MenuNumber}}</span>
+      <span class="center">￥{{item.ShopMenuPrice}}*{{item.MenuNumber}}</span>
       <span (click)="delDesh(item)" class="right"><i></i>{{item.MenuNumber}}</span>
     </li>
   </ul>

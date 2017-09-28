@@ -1,0 +1,8 @@
+<div class="login">
+    <img src="/assets/imgs/zhihuicanting.png" alt="">
+    <div class="form username">
+        <input type="text" [(ngModel)]="tableListParams.LjappId" placeholder="LjappId" name="" id="">
+        <i *ngIf="tableListParams.LjappId" (click)="tableListParams.LjappId=''"></i>
+    </div>
+    <button (click)="submit()">确定</button>
+</div>

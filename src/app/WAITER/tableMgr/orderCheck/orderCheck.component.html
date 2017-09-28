@@ -1,5 +1,5 @@
 <div class="orderCheck">
-    <app-header [title]="orderInfo.DtNumber+'号桌订单核对'" [right]="''">
+    <app-header [title]="orderInfo.DtNumber+'号桌订单核对'" [right]="'桌台管理'"  (rightEvent)="rightEvent($event)">
     </app-header>
 
     <div class="dishlist">
@@ -7,7 +7,7 @@
         <ul>
             <li *ngFor="let item of orderInfo.List">
                 <span class="left">{{item.ShopMenuName}}</span>
-                <span class="center">￥{{item.UnitPrice}}X{{item.MenuNumber}}</span>
+                <span class="center">￥{{item.UnitPrice}}*{{item.MenuNumber}}</span>
                 <span class="right">￥{{item.ShopMenuPrice}}</span>
             </li>
         </ul>
@@ -18,6 +18,7 @@
         <!-- 0初始状态1已下单未结账2已结账 -->
         <div class="payState" *ngIf="orderInfo.OrderState==2">
             <img src="/assets/imgs/yijiezhang.png" alt="">
+            <p>{{orderInfoPrice}}</p>
         </div>
     </div>
 

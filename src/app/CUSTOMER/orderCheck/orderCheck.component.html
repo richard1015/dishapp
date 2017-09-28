@@ -7,7 +7,7 @@
         <ul>
             <li *ngFor="let item of orderInfo.List">
                 <span class="left">{{item.ShopMenuName}}</span>
-                <span class="center">￥{{item.UnitPrice}}X{{item.MenuNumber}}</span>
+                <span class="center">￥{{item.UnitPrice}}*{{item.MenuNumber}}</span>
                 <span class="right">￥{{item.ShopMenuPrice}}</span>
             </li>
         </ul>
@@ -21,16 +21,14 @@
         </div>
     </div>
 
-
-    <div class="code">
-        <app-qrcode [orderid]="orderId"></app-qrcode>
-        <br>
-        <p>长按识别二维码</p>
+    <div class="code" *ngIf="taPay">
+        <app-qrcode [orderid]="orderId" [payType]="payType"></app-qrcode>
     </div>
 
-
-    <footer>
-        <span>TA买单</span>
-        <span class="r" (click)="pay()">我买单</span>
-    </footer>
+    <div [hidden]="orderInfo.OrderState==2">
+        <footer>
+            <span (click)="taPay=true">TA买单</span>
+            <span class="r" (click)="pay()">我买单</span>
+        </footer>
+    </div>
 </div>

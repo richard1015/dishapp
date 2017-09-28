@@ -16,7 +16,7 @@
             <div class="dish-details">
                 <p>{{itemdish.Name}} <span [hidden]="!itemdish.checkName">({{itemdish.checkName}})</span></p>
                 <br>
-                <span class="price">{{itemdish.Price}}￥</span>
+                <span class="price">￥{{itemdish.Price}}</span>
             </div>
             <div class="numberContain" style="line-height: 1.6rem;">
                 <i class="reduce" (click)="itemdish.Num=itemdish.Num-1;sumPrice=sumPrice-itemdish.Price" *ngIf="itemdish.Num"></i>
@@ -28,6 +28,6 @@
 </div>
 
 <footer>
-    <span>合计：￥{{sumPrice}}</span>
+    <span>合计：￥{{sumPrice.toFixed(2)}}</span>
     <span class="r" (click)="submit()">确认下单</span>
 </footer>

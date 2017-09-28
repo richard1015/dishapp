@@ -55,6 +55,7 @@ export class BusinessIncomeComponent implements OnInit {
   }
   //"付款方式 1 微信个人   2 支付宝个人   3 美团  4 大众点评  5 糯米团购  6现金  7 刷卡 "
   payType = [
+    { Id: -1, Name: "退款" },
     { Id: 0, Name: "线上付款" },
     { Id: 1, Name: "个人微信收款码" },
     { Id: 2, Name: "个人支付宝收款码" },

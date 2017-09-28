@@ -17,6 +17,9 @@ li .left {
     flex: 1;
     font-size: .453333rem;
     text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 li .center {

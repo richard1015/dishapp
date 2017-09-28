@@ -1,27 +1,28 @@
 <div class="index-main">
   <app-header [title]="tableid+'号桌'" [right]="'快点模式'" (rightEvent)="rightClick($event)"></app-header>
   <ul class="left">
-    <li [ngClass]="{'active': idx==pageindex}" (click)="pageindex=idx;dishlist=item.List" *ngFor="let item of dishMenu;let idx=index">
+    <li [ngClass]="{'active': idx==pageindex}" (click)="pageindex=idx;" *ngFor="let item of dishMenu;let idx=index">
       <h1>{{item.Name}}</h1>
       <p *ngIf="item.Count">{{item.Count}}</p>
     </li>
   </ul>
   <ul class="right">
-    <li *ngFor="let item of dishlist">
+    <li *ngFor="let item of dishMenu[pageindex].List">
       <!-- <img [src]="item.ImgUrl" alt=""> -->
       <h1>{{item.Name}}</h1>
       <div class="row priceD">
         <span class="price">{{item.Price}}</span>
         <div class="numberContain">
-          <i class="reduce" (click)="item.Num=item.Num-1;sumPrice=sumPrice-item.Price;dishMenu[pageindex].Count=dishMenu[pageindex].Count-1" *ngIf="item.Num"></i>
+          <i class="reduce" (click)="updateNumber(item,-1)"
+            *ngIf="item.Num"></i>
           <span class="number" *ngIf="item.Num">{{item.Num}}</span>
-          <i class="add" (click)="item.Num=item.Num+1;sumPrice=sumPrice+item.Price;dishMenu[pageindex].Count=dishMenu[pageindex].Count+1"></i>
+          <i class="add" (click)="updateNumber(item,1)"></i>
         </div>
       </div>
     </li>
   </ul>
   <footer>
-    <span>￥{{sumPrice}}</span>
+    <span>￥{{sumPrice.toFixed(2)}}</span>
     <button (click)="submit()">点完了</button>
   </footer>
 </div>

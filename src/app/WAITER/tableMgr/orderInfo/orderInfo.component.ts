@@ -28,7 +28,6 @@ export class OrderInfoComponent implements OnInit {
   ngOnInit() {
     this.UserOrderingParam.OrderNum = this.routerInfo.snapshot.params["orderid"];
     this.dishMenu = this.ls.getObject("ls_dish");
-    console.log(this.dishMenu);
     this.sumPrice = this.ls.getObject("ls_sumPrice");
   }
   rightClick(item) {
@@ -50,17 +49,21 @@ export class OrderInfoComponent implements OnInit {
     return true;
   }
   submit() {
+    this.UserOrderingParam.Menus=[];
     for (var key in this.dishMenu) {
       if (this.dishMenu.hasOwnProperty(key)) {
         var dishList = this.dishMenu[key];
         dishList.List.forEach(element => {
           if (element.Num > 0) {
-            this.UserOrderingParam.Menus.push({
-              Id: element.Id,
-              Name: element.Name,
-              Num: element.Num,
-              Taboos: element.checkId || ''
-            });
+            var index = this.UserOrderingParam.Menus.findIndex(menuItem => menuItem.Id == element.Id);
+            if (index == -1) {
+              this.UserOrderingParam.Menus.push({
+                Id: element.Id,
+                Name: element.Name,
+                Num: element.Num,
+                Taboos: element.checkId || ''
+              });
+            }
           }
         });
       }
@@ -69,16 +72,18 @@ export class OrderInfoComponent implements OnInit {
     if (this.UserOrderingParam.OrderNum) {
       this.api.Post(this.UserOrderingParam, "UserAddToOrdering").subscribe((res) => {
         if (res.State == 0) {
+          layer.msg("下单成功！");
           this.router.navigateByUrl(`tableMgr/orderCheck/${res.Value}`);
         }
       });
     } else {
       this.api.Post(this.UserOrderingParam, "UserOrdering").subscribe((res) => {
         if (res.State == 0) {
+          layer.msg("下单成功！");
           this.router.navigateByUrl(`tableMgr/orderCheck/${res.Value}`);
         }
       });
     }
-    layer.msg("下单成功！");
+  
   }
 }

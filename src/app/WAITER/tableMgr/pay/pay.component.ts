@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LocalStorage } from '../../../SERVICE/local.storage';
 import { ApiService } from '../../../SERVICE/api.service';
@@ -8,7 +8,7 @@ declare var layer: any;
   templateUrl: './pay.component.html',
   styleUrls: ['./pay.component.css']
 })
-export class PayComponent implements OnInit {
+export class PayComponent implements OnInit, OnDestroy {
 
   constructor(private api: ApiService,
     private routerInfo: ActivatedRoute,
@@ -18,6 +18,7 @@ export class PayComponent implements OnInit {
   tableId = "";
   //"付款方式 1 微信个人   2 支付宝个人   3 美团  4 大众点评  5 糯米团购  6现金  7 刷卡 "
   payType = [
+    { Id: -1, Name: "退款" , Price: ''},
     { Id: 1, Name: "个人微信收款码", Price: '' },
     { Id: 2, Name: "个人支付宝收款码", Price: '' },
     { Id: 3, Name: "美团团购", Price: '' },
@@ -32,6 +33,23 @@ export class PayComponent implements OnInit {
     "PayMode": []
   };
   payCodeInfo;
+  tempInterval = setInterval(() => {
+    this.api.Post({
+      OrderNumber: this.orderId,
+      PageIndex: 1,
+      PageSize: 9999
+    }, "BGetTableInfoList").subscribe((res) => {
+      if (res.State == 0) {
+        if (res.Value.OrderState == 2) {
+          layer.msg("支付成功！");
+         window.history.back();
+        }
+      }
+    });
+  }, 1000 * 2);
+  ngOnDestroy(): void {
+    clearInterval(this.tempInterval);
+  }
   ngOnInit() {
     this.orderId = this.routerInfo.snapshot.params["orderid"];
     this.tableId = this.routerInfo.snapshot.params["tableid"];
@@ -56,7 +74,8 @@ export class PayComponent implements OnInit {
       this.api.Post(this.staffPayParams, "StaffDownPay").subscribe(res => {
         if (res.State == 0) {
           layer.msg(res.Msg);
-          this.router.navigateByUrl("tableMgr");
+          // this.router.navigateByUrl("tableMgr");
+          window.history.back();
         }
       });
     } else {

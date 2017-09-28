@@ -8,16 +8,20 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 // login
 import { LoginComponent } from './login/login.component';
+
 import { AppRoutes } from './app.routing';
 import { ApiService } from './SERVICE/api.service';
 import { LocalStorage } from './SERVICE/local.storage';
 import { UploadService } from './SERVICE/upload.service';
 import { WebSocketService } from './SERVICE/webSocket.service';
+//肖 要的临时页面
+import { AccountsBindComponent } from './accountsBind/accountsBind.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AccountsBindComponent
 ],
   imports: [
     BrowserModule,

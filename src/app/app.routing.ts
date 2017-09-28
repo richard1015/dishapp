@@ -1,8 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { AccountsBindComponent } from './accountsBind/accountsBind.component';
 const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'xiao', component: AccountsBindComponent },
     // --------------顾客-------------------- //
     { path: 'customer', loadChildren: "app/CUSTOMER/index/index.module#IndexModule" },
     // 桌台管理

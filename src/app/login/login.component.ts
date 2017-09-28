@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../SERVICE/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorage } from '../SERVICE/local.storage';
-
+declare var layer: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,12 +15,20 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private ls: LocalStorage) { }
   tableListParams = {
-    "Phone": "15010156268",//-1获取全部，0未开台1已开台",
-    "Pwd": "123456"
+    "Phone": "",//-1获取全部，0未开台1已开台",
+    "Pwd": ""
   }
   ngOnInit() {
   }
   submit() {
+    if (!this.tableListParams.Phone) {
+      layer.msg("请输入手机号！");
+      return;
+    }
+    if (!this.tableListParams.Pwd) {
+      layer.msg("请输入密码！");
+      return;
+    }
     //-1获取全部，0未开台1已开台
     this.api.Post(this.tableListParams, "ShopUserLogin").subscribe((res) => {
       if (res.State == 0) {

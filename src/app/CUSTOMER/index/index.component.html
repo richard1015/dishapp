@@ -9,8 +9,8 @@
         <li [ngClass]="{'active': tab==2}" (click)="tab=2">商家</li>
     </ul>
     <div class="business-tab-service" *ngIf="tab==1">
-        <app-module [name]="'点餐'" [imgUrl]="'/assets/imgs/diancan.png'" [linkUrl]="'customer/dishMenu'"></app-module>
-        <app-module [name]="'买单'" [imgUrl]="'/assets/imgs/maidan.png'"></app-module>
+        <app-module [name]="'点餐'" [imgUrl]="'/assets/imgs/diancan.png'" (click)="diancan()"></app-module>
+        <app-module [name]="'买单'" [imgUrl]="'/assets/imgs/maidan.png'" (click)="pay()"></app-module>
     </div>
     <div class="business-tab-business" *ngIf="tab==2">
         <ul>

@@ -41,7 +41,7 @@ export class ApiService {
                         case 3:
                             console.error(res.Msg);
                             layer.alert(res.Msg, { icon: 2 });
-                            window.open('/', '_top');
+                            // window.open('/', '_top');
                             break;
                     }
                     return true;
@@ -69,7 +69,7 @@ export class ApiService {
                         case 3:
                             console.error(res.Msg);
                             layer.alert(res.Msg, { icon: 2 });
-                            window.open('/', '_top');
+                            // window.open('/', '_top');
                             break;
                     }
                     return true;

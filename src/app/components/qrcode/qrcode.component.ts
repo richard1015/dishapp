@@ -12,19 +12,34 @@ export class QrcodeComponent implements OnInit {
   @Input()
   orderid = "";
   paylink = "";
+  @Input()
+  payType = "";
+  payTypeName = "";
   ngOnInit() {
     if (this.orderid) {
-      this.api.Post({
-        OrderNo: this.orderid,
-        PayType: "wx"
-      }, "DianPay").subscribe((res) => {
-        if (res.State == 0) {
-          this.paylink = res.Value;
-        } else {
-          this.paylink = "paylink";
-        }
-      });
+      if (this.payType) {
+        this.pay(this.payType);
+      }
     }
   }
-
+  pay(type) {
+    this.payType = type;
+    if (type == "alipay") {
+      this.payTypeName = "支付宝扫码";
+    }
+    if (type == "wx") {
+      this.payTypeName = "微信扫码";
+    }
+    this.api.Post({
+      OrderNo: this.orderid,
+      PayType: type
+    }, "DianPay").subscribe((res) => {
+      if (res.State == 0) {
+        this.paylink = res.Value;
+      } else {
+        this.paylink = "paylink";
+      }
+    });
+  }
 }
+
