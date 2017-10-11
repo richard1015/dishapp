@@ -60,6 +60,10 @@ export class OrderCheckComponent implements OnInit {
       }
     });
   }
+  pay(){
+    this.ls.set("order_price",this.orderInfo.Price);
+    this.router.navigateByUrl(`/tableMgr/pay/${this.orderId}/${this.orderInfo.DtNumber}`);
+  }
   print() {
     this.api.Post({
       OrderNumber: this.orderId

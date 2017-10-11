@@ -47,7 +47,7 @@
                 <p>转台</p>
             </div>
         </li>
-        <li [routerLink]="['/tableMgr/pay',orderId,orderInfo.DtNumber]">
+        <li (click)="pay()">
             <div>
                 <i class="maidan"></i>
                 <p>买单</p>

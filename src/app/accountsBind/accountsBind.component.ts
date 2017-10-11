@@ -18,6 +18,8 @@ export class AccountsBindComponent implements OnInit {
     "LjappId": ""
   }
   ngOnInit() {
+    this.ls.setObject("USERINFO", {});
+    layer.msg("清楚缓登录缓存成功！");
   }
   submit() {
     if (!this.tableListParams.LjappId) {

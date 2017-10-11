@@ -19,7 +19,6 @@ export class IndexComponent implements OnInit {
     shopid = "";
     shopInfo: any = {};
     ngOnInit() {
-
         //判断是支付宝app的浏览器
         var userAgent: any = navigator.userAgent.toLowerCase();
         if (userAgent.match(/Alipay/i) == "alipay") {
@@ -67,7 +66,7 @@ export class IndexComponent implements OnInit {
     }
     alAuth(auth_code = "") {
         if (!auth_code) {
-            var url = `https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2017091808799375&scope=auth_user&redirect_uri=http://d.aibyn.com/AuthLoginCallBack.ashx&state=${encodeURIComponent(window.location.href)}`;
+            var url = `https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2017091808799375&scope=auth_user&redirect_uri=${encodeURIComponent('http://d.aibyn.com/AuthLoginCallBack.ashx')}&state=${encodeURIComponent(window.location.href)}`;
             window.location.href = url;
         } else {
             this.getGuidAl(auth_code);

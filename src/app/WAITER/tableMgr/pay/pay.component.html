@@ -1,5 +1,5 @@
 <div class="pay">
-  <app-header [title]="'买单'"></app-header>
+  <app-header [title]="'买单￥'+orderPrice"></app-header>
   <div class="content">
     <ul class="state-tab">
       <li class="active" [ngClass]="{'active': tab==1}" (click)="tab=1">企业收款码</li>

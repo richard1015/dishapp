@@ -1,5 +1,5 @@
 <div class="taboos">
-    <app-header [title]="'忌口设置'" [right]="'保存'" (rightEvent)="submit($event)">
+    <app-header [title]="'口味设置'" [right]="'保存'" (rightEvent)="submit($event)">
     </app-header>
     <div class="taboos-content">
         <ul class="dishInfo" *ngFor="let item of dishMenu" [hidden]="checkDishList(item.List)">

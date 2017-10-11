@@ -59,7 +59,7 @@ export class OrderInfoComponent implements OnInit {
                 Id: element.Id,
                 Name: element.Name,
                 Num: element.Num,
-                Taboos: element.checkId || ''
+                Taboos: element.checkName || '' 
               });
             }
           }
