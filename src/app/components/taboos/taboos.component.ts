@@ -22,6 +22,7 @@ export class TaboosComponent implements OnInit {
     for (var key in list) {
       if (list.hasOwnProperty(key)) {
         var element = list[key];
+
         if (element.Num > 0) {
           return false;
         }
@@ -29,6 +30,26 @@ export class TaboosComponent implements OnInit {
     }
     return true;
   }
+  choiceDishtaboos(itemdish, idx) {
+    if (!itemdish.checkName) itemdish.checkName = [];
+
+    let fname = itemdish.FNames.split(',')[idx];
+    let index = itemdish.checkName.findIndex(item => item == fname);
+    if (index == -1)
+      itemdish.checkName.push(fname);
+    else
+      itemdish.checkName.splice(index, 1);
+  }
+
+  checkActive(lable, itemdish, idx) {
+    if (itemdish.checkName) {
+      if (itemdish.checkName.indexOf(lable) != -1) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   submit(item) {
     this.ls.setObject("ls_dish", this.dishMenu);
     window.history.back();

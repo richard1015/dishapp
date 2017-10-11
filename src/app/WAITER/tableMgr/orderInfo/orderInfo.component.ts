@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LocalStorage } from '../../../SERVICE/local.storage';
 import { ApiService } from '../../../SERVICE/api.service';
-declare var layer:any;
+declare var layer: any;
 @Component({
   selector: 'app-orderInfo',
   templateUrl: './orderInfo.component.html',
@@ -49,7 +49,7 @@ export class OrderInfoComponent implements OnInit {
     return true;
   }
   submit() {
-    this.UserOrderingParam.Menus=[];
+    this.UserOrderingParam.Menus = [];
     for (var key in this.dishMenu) {
       if (this.dishMenu.hasOwnProperty(key)) {
         var dishList = this.dishMenu[key];
@@ -61,7 +61,7 @@ export class OrderInfoComponent implements OnInit {
                 Id: element.Id,
                 Name: element.Name,
                 Num: element.Num,
-                Taboos: element.checkName || ''
+                Taboos: element.checkName.join(',') || ''
               });
             }
           }
@@ -84,6 +84,6 @@ export class OrderInfoComponent implements OnInit {
         }
       });
     }
-  
+
   }
 }

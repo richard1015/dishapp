@@ -15,10 +15,9 @@
                 </div>
                 <div class="row lb" [hidden]="!itemdish.FNames">
                     <ul class="lable">
-                        <li [ngClass]="{'active': itemdish.checkId==itemdish.FIds.split(',')[idx]}" 
-                        (click)="itemdish.checkId = itemdish.FIds.split(',')[idx];
-                            itemdish.checkName = itemdish.FNames.split(',')[idx]"
-                         *ngFor="let lable of itemdish.FNames.split(',');let idx=index;">{{lable}}</li>
+                        <li [ngClass]="{'active': checkActive(lable,itemdish,idx)}"
+                         (click)="choiceDishtaboos(itemdish,idx)"
+                          *ngFor="let lable of itemdish.FNames.split(',');let idx=index;">{{lable}}</li>
                     </ul>
                 </div>
             </li>
