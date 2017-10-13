@@ -16,6 +16,7 @@ import { PayComponent } from './pay/pay.component';
 import { TableEditComponent } from './tableEdit/tableEdit.component';
 import { DishMenuFasterComponent } from './dishMenuFaster/dishMenuFaster.component';
 import { DishNotifyComponent } from './dishNotify/dishNotify.component';
+import { TableListComponent } from './tableList/tableList.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { DishNotifyComponent } from './dishNotify/dishNotify.component';
     PayComponent, 
     TableEditComponent,
     DishMenuFasterComponent,
-    DishNotifyComponent
+    DishNotifyComponent,
+    TableListComponent
 ]
 })
 export class TableMgrModule { }

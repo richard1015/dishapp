@@ -58,6 +58,6 @@ export class TableMgrComponent implements OnInit, OnDestroy {
   }
 
   rightEvent(item) {
-    this.router.navigateByUrl("tableMgr/editTable");
+    this.router.navigateByUrl("tableMgr/tableList");
   }
 }

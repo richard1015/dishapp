@@ -9,6 +9,7 @@ import { PayComponent } from './pay/pay.component';
 import { TableEditComponent } from './tableEdit/tableEdit.component';
 import { DishMenuFasterComponent } from './dishMenuFaster/dishMenuFaster.component';
 import { DishNotifyComponent } from './dishNotify/dishNotify.component';
+import { TableListComponent } from './tableList/tableList.component';
 
 
 const routes: Routes = [
@@ -33,8 +34,10 @@ const routes: Routes = [
   { path: 'delDish/:orderid', component: DelDishComponent },
   // 买单
   { path: 'pay/:orderid/:tableid', component: PayComponent },
+  // 桌台列表
+  { path: 'tableList', component: TableListComponent },
   // 新增桌台
-  { path: 'editTable', component: TableEditComponent },
+  { path: 'tableList/editTable/:id', component: TableEditComponent },
   // 无库存通知
   { path: 'dishNotify/:id/:name', component: DishNotifyComponent }
 ];

@@ -46,6 +46,13 @@ export class OrderInfoComponent implements OnInit {
     }
     return true;
   }
+  getTaboos(checkName) {
+    if(checkName){
+      return checkName.join(',');
+    }else{
+      return "";
+    }
+  }
   submit() {
     this.UserOrderingParam.Menus = [];
     for (var key in this.dishMenu) {
@@ -59,7 +66,7 @@ export class OrderInfoComponent implements OnInit {
                 Id: element.Id,
                 Name: element.Name,
                 Num: element.Num,
-                Taboos: element.checkName.join(',') || ''
+                Taboos: this.getTaboos(element.checkName)
               });
             }
           }

@@ -1,0 +1,12 @@
+<div class="tableList">
+  <app-header [title]="'管理桌台'" [right]="'新增桌台'" (rightEvent)="rightEvent($event)">
+  </app-header>
+  <div class="row list">
+    <ul>
+      <li *ngFor="let item of tableArray" [routerLink]="['editTable',item.Id]">
+        <span class="left">{{item.DtNumber}}</span>
+        <span class="right">{{item.DtPeople}}人<i></i></span>
+      </li>
+    </ul>
+  </div>
+</div>

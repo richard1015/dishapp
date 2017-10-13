@@ -19,8 +19,19 @@ export class TableEditComponent implements OnInit {
     DtPeople: ""
   }
   ngOnInit() {
+    this.editTableParams.Id = this.routerInfo.snapshot.params["id"] || "0";
+    if(this.editTableParams.Id!=0){
+      this.getInfo();
+    }
   }
-
+  getInfo() {
+    this.api.Post({ Id: this.editTableParams.Id }, "BGetTableInfoById").subscribe(res => {
+      if (res.State == 0) {
+          this.editTableParams.DtNumber=res.Value[0].DtNumber;
+          this.editTableParams.DtPeople=res.Value[0].DtPeople;
+      }
+    });
+  }
   rightEvent(item) {
     this.api.Post(this.editTableParams, "BGetTableAdd").subscribe(res => {
       if (res.State == 0) {
