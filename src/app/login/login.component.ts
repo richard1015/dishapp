@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private ls: LocalStorage) { }
   tableListParams = {
-    "Phone": "15010156268",//-1获取全部，0未开台1已开台",
+    "Phone": "15010156268",
     "Pwd": "123456"
   }
   ngOnInit() {
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       layer.msg("请输入密码！");
       return;
     }
-    //-1获取全部，0未开台1已开台
+  
     this.api.Post(this.tableListParams, "ShopUserLogin").subscribe((res) => {
       if (res.State == 0) {
         this.ls.setObject("USERINFO", { Guid: res.Value });

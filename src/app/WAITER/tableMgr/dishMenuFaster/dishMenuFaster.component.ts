@@ -30,10 +30,11 @@ export class DishMenuFasterComponent implements OnInit {
     window.history.back();
   }
   search() {
+    this.py = this.py.toUpperCase();
     this.dishlist = [];
     this.dishMenu.forEach(element => {
       element.List.forEach(listItem => {
-        if (listItem.FPinyin.toLowerCase()[0] == this.py.toLowerCase()) {
+        if (listItem.FPinyin.toUpperCase().indexOf(this.py) != -1) {
           this.dishlist.push(listItem);
         }
       });

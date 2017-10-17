@@ -5,10 +5,11 @@
     <div class="dishlist">
         <h1>已点菜品：</h1>
         <ul>
-            <li *ngFor="let item of orderInfo.List">
+            <li *ngFor="let item of orderInfo.List" [ngClass]="{'nothing': item.IsDelete==2}">
                 <span class="left">{{item.ShopMenuName}}</span>
                 <span class="center">￥{{item.UnitPrice}}*{{item.MenuNumber}}</span>
-                <span class="right">￥{{item.ShopMenuPrice}}</span>
+                <span *ngIf="item.IsDelete!=2" class="right">￥{{item.ShopMenuPrice}}</span>
+                <span *ngIf="item.IsDelete==2" class="right nothing">已卖光</span>
             </li>
         </ul>
         <div class="count">

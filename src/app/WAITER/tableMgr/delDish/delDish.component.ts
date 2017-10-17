@@ -31,18 +31,42 @@ export class DelDishComponent implements OnInit {
       }
     });
   }
+
+  delDishArray = [];
   delDesh(item) {
-    if (item.MenuNumber == 0) {
-      return;
-    }
-    this.api.Post({
-      OrderNum: this.orderId,
-      ShopMenuId: item.ShopMenuId
-    }, "UserReduceOrdering").subscribe((res) => {
-      if (res.State == 0) {
-        item.MenuNumber -= 1;
-        layer.msg(res.Msg);
+    if (item.MenuNumber > 0) {
+      item.MenuNumber -= 1;
+      var index = this.delDishArray.findIndex(delItem => delItem.Id == item.ShopMenuId);
+      if (index == -1) {
+        this.delDishArray.push({
+          Id: item.ShopMenuId,
+          Num: 1
+        });
+      } else {
+        this.delDishArray[index].Num += 1;
       }
-    });
+    }
   }
+  rightEvent(item) {
+    let $this=this;
+    if (this.delDishArray.length > 0) {
+      //prompt层
+      layer.prompt({ title: '请输入退菜原因', formType: 2 }, function (text, index) {
+        layer.close(index);
+        $this.api.Post({
+          "OrderNum": $this.orderId,
+          "ShopMenus": $this.delDishArray,
+          "ReasonMsg": text
+        }, "UserReduceOrdering").subscribe((res) => {
+          if (res.State == 0) {
+            layer.msg(res.Msg);
+            window.history.back();
+          }
+        });
+      });
+    } else {
+      layer.msg("请先修改菜品！");
+    }
+  }
+
 }

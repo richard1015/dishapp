@@ -1,5 +1,5 @@
 <div class="delDish">
-  <app-header [title]="'划菜'" [right]="''">
+  <app-header [title]="'退菜'" [right]="'保存'" (rightEvent)="rightEvent($event)">
   </app-header>
   <ul>
     <li *ngFor="let item of orderInfo.List">

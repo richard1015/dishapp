@@ -1,0 +1,59 @@
+.wallet{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding:1.173333rem 0 0 0;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background: #ffffff;
+}
+.content{
+    padding: 0 .266667rem;
+    box-sizing: border-box;
+}
+.balance{
+    height: 5.333333rem;
+    padding: .6rem 0;
+    position: relative;
+    color: #a28e72;
+    box-sizing: border-box;
+    border-bottom: .133333rem solid #f6f6f6;
+}
+.balance img{
+    height: 4.133333rem;
+}
+.balance h1{
+    font-size: .533333rem;
+    position: absolute;
+    top: 1.693333rem;
+    left: .533333rem;
+}
+.balance p{
+    font-size: .8rem;
+    font-weight: bold;
+    position: absolute;
+    top: 2.693333rem;
+    left: .533333rem;
+}
+li{
+    color: #333333;
+    font-size: .4rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-bottom: 1px solid #eeecec;
+    position: relative;
+}
+li i{
+    background: url('/assets/imgs/huisejiantou.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    line-height: 1.466667rem;
+    margin-left: .56rem;
+    position: absolute;
+    right: 0;
+    top: .55rem;
+}

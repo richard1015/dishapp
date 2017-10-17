@@ -12,11 +12,12 @@
       <h1>{{item.Name}}</h1>
       <div class="row priceD">
         <span class="price">{{item.Price}}</span>
-        <div class="numberContain">
+        <div *ngIf="item.IsUp==0" class="numberContain">
           <i class="reduce" (click)="updateNumber(item,-1)" *ngIf="item.Num"></i>
           <span class="number" *ngIf="item.Num">{{item.Num}}</span>
           <i class="add" (click)="updateNumber(item,1)"></i>
         </div>
+        <div *ngIf="item.IsUp==1" class="numberContain" style="color:red;">已卖光</div>
       </div>
     </li>
   </ul>

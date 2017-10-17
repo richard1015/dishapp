@@ -69,6 +69,13 @@ li .right {
     font-size: .346667rem;
     text-align: right;
 }
+li.nothing{
+    background: rgb(255, 241, 241);
+}
+
+li .right.nothing {
+    color: #FF7979;
+}
 
 .code{
     padding-top: 1.44rem;

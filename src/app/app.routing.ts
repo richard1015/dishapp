@@ -11,12 +11,15 @@ const routes: Routes = [
     { path: 'tableMgr', loadChildren: "app/WAITER/tableMgr/tableMgr.module#TableMgrModule" },
     // 退款处理
     { path: 'payRefundMgr', loadChildren: "app/WAITER/payRefundMgr/payRefundMgr.module#PayRefundMgrModule" },
-     // 营业收入
-     { path: 'businessIncome',loadChildren: "app/WAITER/businessIncome/businessIncome.module#BusinessIncomeModule" },
+    // 营业收入
+    { path: 'businessIncome', loadChildren: "app/WAITER/businessIncome/businessIncome.module#BusinessIncomeModule" },
     // 忌口选择
-    { path: 'components/taboos',loadChildren: "app/components/taboos/taboos.module#TaboosModule" },
+    { path: 'components/taboos', loadChildren: "app/components/taboos/taboos.module#TaboosModule" },
     // 我的模块
-    { path: 'components/myModule',loadChildren: "app/components/myModule/myModule.module#MyModuleModule" },
+    { path: 'components/myModule', loadChildren: "app/components/myModule/myModule.module#MyModuleModule" },
+    // 钱包
+    { path: 'wallet', loadChildren: "app/BOSS/wallet/wallet.module#WalletModule" },
+
     { path: '**', component: LoginComponent }
 ];
 
