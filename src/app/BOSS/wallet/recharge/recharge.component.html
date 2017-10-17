@@ -1,0 +1,16 @@
+<div class="recharge">
+  <app-header [title]="'账户充值'">
+  </app-header>
+  <div class="row content">
+    <div class="tip">
+      单次最低充值金额为99元
+    </div>
+    <div class="money">
+      <span>金额</span>
+      <input type="text" placeholder="请输入充值金额">
+    </div>
+    <div class="code">
+      <app-qrcode [orderid]="orderId"></app-qrcode>
+    </div>
+  </div>
+</div>
