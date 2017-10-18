@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'app/SERVICE/api.service';
-import { LocalStorage } from 'app/SERVICE/local.storage';
+import { LocalStorage } from '../../../SERVICE/local.storage';
+import { ApiService } from '../../../SERVICE/api.service';
+
 
 @Component({
   selector: 'app-tableList',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'app/SERVICE/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LocalStorage } from 'app/SERVICE/local.storage';
+import { ApiService } from '../../../SERVICE/api.service';
+import { LocalStorage } from '../../../SERVICE/local.storage';
 
 @Component({
   selector: 'app-bill',
