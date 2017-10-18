@@ -2,155 +2,21 @@
   <app-header [title]="'账单'">
   </app-header>
   <div class="row content">
+    <br>
+    <div class="row dateChoice">
+      <input type="date" name="" id="" [(ngModel)]="params.StarTime"> 至
+      <input type="date" name="" id="" [(ngModel)]="params.EndTime">
+      <button (click)="getBusinessIncomeInfo()">查询</button>
+    </div>
     <ul>
-      <li>2017年10月17日 收入 ： 5411.51元</li>
-      <li>
+      <li>收入 ：{{orderMoney.allPrice}}元 <label [routerLink]="['explain']"><i></i>说明</label></li>
+      <li [routerLink]="['details',item.OrderNumber]" *ngFor="let item of orderList">
         <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
+          <span class="orderNum">订单编号：{{item.OrderNumber}}</span>
+          <span class="orderTime">{{item.EndTime}}</span>
         </div>
         <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
-          <span class="details">详情</span>
-        </div>
-      </li>
-      <li>
-        <div class="row row-h">
-          <span class="orderNum">订单编号：CT123444</span>
-          <span class="orderTime">2017-10-17 16:33:39</span>
-        </div>
-        <div class="row row-h">
-          <span class="money">+551.92元</span>
+          <span class="money">+{{item.allPrice}}元</span>
           <span class="details">详情</span>
         </div>
       </li>

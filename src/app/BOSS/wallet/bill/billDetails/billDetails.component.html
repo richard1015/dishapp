@@ -1,0 +1,27 @@
+<div class="billDetails">
+  <app-header [title]="'账单明细'">
+  </app-header>
+  <div class="row content">
+    <ul>
+      <li>{{detailsInfo.DtNumber}}桌</li>
+
+
+      <li *ngFor="let item of detailsInfo.List">
+        <span class="left">{{item.ShopMenuName}}</span>
+        <span class="center">￥{{item.UnitPrice}}*{{item.MenuNumber}}</span>
+        <span class="right">￥{{item.ShopMenuPrice}}</span>
+      </li>
+
+      <li class="sysStyle">
+        <span class="left">银行交易费率</span>
+        <span class="center">0.03%</span>
+        <span class="right">-￥{{detailsInfo.leavePrice}}</span>
+      </li>
+     
+      <li>
+        实收：
+        <span class="right money">￥{{detailsInfo.allPrice}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

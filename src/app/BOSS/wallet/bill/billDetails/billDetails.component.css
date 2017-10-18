@@ -1,0 +1,69 @@
+.billDetails{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding:1.173333rem 0 0 0;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.content{
+    box-sizing: border-box; 
+    height: 100%;
+    background: #ffffff;
+}
+
+li {
+    padding: 0 .266667rem;
+    height:1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 1px solid #d7d7d7;
+    display: flex;
+}
+
+li.sysStyle{
+    background: #EEEEEE;
+    border-bottom: 0;
+}
+
+li:first-child{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .453333rem;
+    color: #ff7799;
+    border-bottom: 0;
+}
+li:last-child{
+    height: 3.2rem;
+    line-height:3.2rem;
+    font-size: .533333rem !important;
+    border-bottom: 0;
+}
+
+
+li .left {
+    flex: 1;
+    font-size: .4rem;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+li .center {
+    flex: 1;
+    font-size: .346667rem;
+    color: #999999;
+    text-align: center;
+}
+
+li .right {
+    flex: 1;
+    font-size: .346667rem;
+    text-align: right;
+    color: #666666;
+}
+li .right.money{
+    font-size: .533333rem;
+    color: #ff7799;
+}

@@ -1,0 +1,32 @@
+.explain{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding:1.173333rem 0 0 0;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.content{
+    box-sizing: border-box; 
+    height: 100%;
+    
+}
+li{
+    height: 3.066667rem;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 0 .266667rem;
+    margin-bottom: .133333rem;
+}
+li h1{
+    font-size: .426667rem;
+    color: #333333;
+    height: 1.533333rem;
+    line-height: 1.533333rem;
+}
+li p{
+    font-size: .373333rem;
+    color: #666666;
+    height: 1.533333rem;
+}
