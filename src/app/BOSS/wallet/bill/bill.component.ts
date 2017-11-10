@@ -22,7 +22,9 @@ export class BillComponent implements OnInit {
     "PageSize": "10"
   }
   orderList = [];
-  orderMoney=[];
+  orderMoney = {
+    allPrice: ""
+  };
   ngOnInit() {
     this.api.Post(this.params, "ZWalletList").subscribe(res => {
       if (res.State == 0) {

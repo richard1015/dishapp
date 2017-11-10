@@ -19,7 +19,7 @@ export class OrderCheckComponent implements OnInit, OnDestroy {
   orderId = "";
   tempInterval = setInterval(() => {
     this.ngOnInit();
-  }, 2000);
+  }, 5000);
   ngOnDestroy(): void {
     clearInterval(this.tempInterval);
   }

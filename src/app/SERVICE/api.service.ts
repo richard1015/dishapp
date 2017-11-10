@@ -40,6 +40,7 @@ export class ApiService {
                             break;
                         case 3:
                             console.error(res.Msg);
+                            this.ls.setObject("USERINFO", {});
                             layer.alert(res.Msg, { icon: 2 });
                             // window.open('/', '_top');
                             break;
@@ -69,6 +70,8 @@ export class ApiService {
                         case 3:
                             console.error(res.Msg);
                             layer.alert(res.Msg, { icon: 2 });
+                            this.ls.setObject("USERINFO", {});
+                            window.location.href= this.ls.get("customerUrl");
                             // window.open('/', '_top');
                             break;
                     }

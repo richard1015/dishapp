@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private ls: LocalStorage) { }
   tableListParams = {
-    "Phone": "15010156268",
-    "Pwd": "123456"
+    "Phone": "",
+    "Pwd": ""
   }
   ngOnInit() {
   }

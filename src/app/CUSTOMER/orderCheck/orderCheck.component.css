@@ -3,6 +3,8 @@
     box-sizing: border-box;
     height: 100%;
     background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .dishlist {
@@ -19,6 +21,7 @@
     display: flex;
     font-size: .48rem;
     margin-top: .933333rem;
+    margin-bottom: .933333rem;
 }
 
 .dishlist .count span {
@@ -49,7 +52,7 @@ li {
 }
 
 li .left {
-    flex: 1;
+    flex: 3;
     font-size: .453333rem;
     text-align: left;
     overflow: hidden;

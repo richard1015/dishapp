@@ -1,5 +1,5 @@
 <div class="pt-title business">
-    <app-header [title]="shopInfo.Name"></app-header>
+    <app-header [leftShow]="false" [title]="shopInfo.Name"></app-header>
     <div class="business-info">
         <img src="{{shopInfo.ShopImg}}" alt="">
         <span>{{shopInfo.Name}}</span>
@@ -10,19 +10,22 @@
     </ul>
     <div class="business-tab-service" *ngIf="tab==1">
         <app-module [name]="'点餐'" [imgUrl]="'/assets/imgs/diancan.png'" (click)="diancan()"></app-module>
-        <app-module [name]="'买单'" [imgUrl]="'/assets/imgs/maidan.png'" (click)="pay()"></app-module>
+        <!-- <app-module [name]="'买单'" [imgUrl]="'/assets/imgs/maidan.png'" (click)="pay()"></app-module> -->
     </div>
     <div class="business-tab-business" *ngIf="tab==2">
         <ul>
-            <li><i class="time"></i>{{shopInfo.BusinessHours}}</li>
-            <li><i class="phone"></i>{{shopInfo.Tell}}</li>
-            <li><i class="address"></i>{{shopInfo.Address}}</li>
+            <li>
+                <i class="time"></i>{{shopInfo.BusinessHours}}</li>
+            <li>
+                <i class="phone"></i>{{shopInfo.Tell}}</li>
+            <li>
+                <i class="address"></i>{{shopInfo.Address}}</li>
         </ul>
-        <div class="about">关于我们</div>
-        <div class="restaurant">
+        <!-- <div class="about">关于我们</div> -->
+        <!-- <div class="restaurant">
             <p>餐厅实景</p>
             <img *ngFor="let item of shopInfo.ImgUrl.split(',')" src="{{item}}" alt="">
-        </div>
+        </div> -->
         <!-- <div class="restaurant">
             <p>餐厅视频</p>
             <img src="https://pro.modao.cc/uploads3/images/983/9839307/raw_1495792137.png" alt="">

@@ -14,7 +14,9 @@ export class WalletComponent implements OnInit {
     private router: Router,
     private ls: LocalStorage) { }
 
-  walletMoney = {};
+  walletMoney={
+    Moneys:""
+  };
   ngOnInit() {
     this.api.Post({}, "ZWalletMoney").subscribe(res => {
       if (res.State == 0)

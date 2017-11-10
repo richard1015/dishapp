@@ -38,6 +38,9 @@ export class IndexComponent implements OnInit {
         this.ls.set("tableidd", this.tableid);
         this.ls.set("shopid", this.shopid);
 
+        let currentUrl = `http://u.aibyn.com/#/customer?shopid=${this.shopid}&tableid=${this.tableid}`;
+        this.ls.set("customerUrl", currentUrl);
+
         if (this.ls.getObject("USERINFO").Guid) {
             this.getUserState(this.tableid);
             this.getShopInfo();
@@ -66,7 +69,9 @@ export class IndexComponent implements OnInit {
     }
     alAuth(auth_code = "") {
         if (!auth_code) {
-            var url = `https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2017091808799375&scope=auth_user&redirect_uri=${encodeURIComponent('http://d.aibyn.com/AuthLoginCallBack.ashx')}&state=${encodeURIComponent(window.location.href)}`;
+            // var url = `https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2017091808799375&scope=auth_user&redirect_uri=${encodeURIComponent('http://d.aibyn.com/AuthLoginCallBack.ashx')}&state=${encodeURIComponent(window.location.href)}`;
+            var url = `http://d.aibyn.com/AuthLoginCallBack.ashx?shopid=${this.shopid}&tableid=${this.tableid}`;
+
             window.location.href = url;
         } else {
             this.getGuidAl(auth_code);

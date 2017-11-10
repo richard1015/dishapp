@@ -18,7 +18,7 @@ const routes: Routes = [
     // 我的模块
     { path: 'components/myModule', loadChildren: "app/components/myModule/myModule.module#MyModuleModule" },
     // 钱包
-    { path: 'wallet', loadChildren: "app/BOSS/wallet/wallet.module#WalletModule" },
+    { path: 'wallet', loadChildren: "app/BOSS/wallet/wallet.module#WalletModule", data: { title: '钱包' } },
 
     { path: '**', component: LoginComponent }
 ];

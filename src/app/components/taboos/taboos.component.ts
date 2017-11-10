@@ -35,10 +35,18 @@ export class TaboosComponent implements OnInit {
 
     let fname = itemdish.FNames.split(',')[idx];
     let index = itemdish.checkName.findIndex(item => item == fname);
-    if (index == -1)
-      itemdish.checkName.push(fname);
-    else
+    if (index == -1) {
+      //多选
+      // itemdish.checkName.push(fname);
+      //单选
+      itemdish.checkName[0] = fname;
+    }
+    else {
       itemdish.checkName.splice(index, 1);
+      if (itemdish.checkName.length == 0) {
+        itemdish.checkName=null;
+      }
+    }
   }
 
   checkActive(lable, itemdish, idx) {

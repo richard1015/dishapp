@@ -1,17 +1,17 @@
 <div class="index-main">
   <app-header [title]="tableId+'号桌'"></app-header>
   <ul class="left">
-    <li [ngClass]="{'active': idx==pageindex}" (click)="pageindex=idx;" *ngFor="let item of dishMenu;let idx=index">
+    <li [ngClass]="{'active': idx==pageindex}" (click)="categoryChoice(idx)" *ngFor="let item of dishMenu;let idx=index">
       <h1>{{item.Name}}</h1>
       <p *ngIf="item.Count">{{item.Count}}</p>
     </li>
   </ul>
   <ul class="right">
-    <li *ngFor="let item of dishMenu[pageindex].List">
-      <img [src]="item.ImgUrl" alt="">
+    <li *ngFor="let item of dishMenuList">
+      <img *ngIf="item.ImgUrl" [src]="item.ImgUrl" alt="">
       <h1>{{item.Name}}</h1>
       <div class="row priceD">
-        <span class="price">{{item.Price}}</span>
+        <span class="price">￥{{item.Price}}/{{item.UnitName}}</span>
         <div *ngIf="item.IsUp==0" class="numberContain">
           <i class="reduce" (click)="updateNumber(item,-1)" *ngIf="item.Num"></i>
           <span class="number" *ngIf="item.Num">{{item.Num}}</span>

@@ -29,10 +29,21 @@ export class DishMenuComponent implements OnInit {
       if (res.State == 0) {
         this.dishMenu = res.Value;
         this.pageindex = 0;
+        this.dishMenuList = this.dishMenu[this.pageindex].List;
       }
     });
   }
-
+  dishMenuList = [];
+  categoryChoice(idx) {
+    let dishMenuListDiv = document.querySelector('ul.right');
+    dishMenuListDiv.scrollTop = 0;
+    this.pageindex = idx;
+    this.dishMenuList = [];
+    this.dishMenuList = this.dishMenu[this.pageindex].List;
+  }
+  onScroll(event) {
+    console.log('scroll event', event);
+  }
   updateNumber(item, number: number) {
     if (number == 1) {
       this.sumPrice += item.Price;

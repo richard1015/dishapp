@@ -8,7 +8,8 @@ declare var layer: any;
 })
 export class HeaderComponent implements OnInit {
 
-
+  @Input()
+  leftShow: boolean = true;
   @Input()
   title: string = "title";
   @Input()

@@ -38,7 +38,7 @@ import { TableListComponent } from './tableList/tableList.component';
     TableEditComponent,
     DishMenuFasterComponent,
     DishNotifyComponent,
-    TableListComponent
+    TableListComponent,
 ]
 })
 export class TableMgrModule { }

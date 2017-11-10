@@ -15,7 +15,7 @@ export class BillDetailsComponent implements OnInit {
     private router: Router,
     private ls: LocalStorage) { }
 
-  detailsInfo = {};
+  detailsInfo;
   ngOnInit() {
     this.api.Post({
       "OrderNumber": this.routerInfo.snapshot.params["id"],

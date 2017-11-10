@@ -42,7 +42,7 @@ li:last-child{
 
 
 li .left {
-    flex: 1;
+    flex: 3;
     font-size: .4rem;
     text-align: left;
     overflow: hidden;

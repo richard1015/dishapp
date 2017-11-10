@@ -6,7 +6,7 @@
     <div class="row dateChoice">
       <input type="date" name="" id="" [(ngModel)]="params.StarTime"> 至
       <input type="date" name="" id="" [(ngModel)]="params.EndTime">
-      <button (click)="getBusinessIncomeInfo()">查询</button>
+      <button (click)="ngOnInit()">查询</button>
     </div>
     <ul>
       <li>收入 ：{{orderMoney.allPrice}}元 <label [routerLink]="['explain']"><i></i>说明</label></li>

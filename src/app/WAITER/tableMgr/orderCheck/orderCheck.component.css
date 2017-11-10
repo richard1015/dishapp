@@ -21,6 +21,7 @@
     display: flex;
     font-size: .48rem;
     margin-top: .933333rem;
+    margin-bottom: .933333rem;
 }
 
 .dishlist .count span {
@@ -51,7 +52,7 @@ li {
 }
 
 li .left {
-    flex: 1;
+    flex: 3;
     font-size: .453333rem;
     text-align: left;
     overflow: hidden;
