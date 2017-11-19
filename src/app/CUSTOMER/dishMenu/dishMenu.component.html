@@ -22,7 +22,56 @@
     </li>
   </ul>
   <footer>
-    <span>￥{{sumPrice.toFixed(2)}}</span>
-    <button (click)="submit()">点完了</button>
+    <ul>
+      <li>
+        <span>已点菜品（10）</span>
+        <button>清空</button>
+      </li>
+      <li>
+        <span>鱼香肉丝</span>
+        <span>30.00</span>
+        <div class="numberContain">
+          <i class="reduce"></i>
+          <span class="number">3</span>
+          <i class="add"></i>
+        </div>
+      </li>
+      <li>
+        <span>鱼香肉丝</span>
+        <span>30.00</span>
+        <div class="numberContain">
+          <i class="reduce"></i>
+          <span class="number">3</span>
+          <i class="add"></i>
+        </div>
+      </li>
+      <li>
+        <span>鱼香肉丝</span>
+        <span>30.00</span>
+        <div class="numberContain">
+          <i class="reduce"></i>
+          <span class="number">3</span>
+          <i class="add"></i>
+        </div>
+      </li>
+      <li>
+        <span>鱼香肉丝</span>
+        <span>30.00</span>
+        <div class="numberContain">
+          <i class="reduce"></i>
+          <span class="number">3</span>
+          <i class="add"></i>
+        </div>
+      </li>
+    </ul>
+    <div class="footer">
+      <div class="footer-left">
+        <i></i>
+      </div>
+      <div class="footer-right">
+        <span>￥{{sumPrice.toFixed(2)}}</span>
+        <button (click)="submit()">点完了</button>
+      </div>
+    </div>
   </footer>
 </div>
