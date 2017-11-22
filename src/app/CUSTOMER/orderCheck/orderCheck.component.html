@@ -1,9 +1,12 @@
 <div class="orderCheck">
-    <app-header [title]="orderInfo.DtNumber+'号桌订单核对'" [right]="''">
+    <app-header [title]="'已下单的菜品'" [right]="''">
     </app-header>
 
     <div class="dishlist">
-        <h1>已点菜品：</h1>
+        <!-- 0初始状态1已下单未结账2已结账 -->
+        <img class="payState" *ngIf="orderInfo.OrderState==2" src="/assets/imgs/yijiezhang.png" alt="">
+        <h1>桌号：{{orderInfo.DtNumber}} 人数：缺字段 下单时间：缺字段</h1>
+        <hr>
         <ul>
             <li *ngFor="let item of orderInfo.List" [ngClass]="{'nothing': item.IsDelete==2}">
                 <span class="left">{{item.ShopMenuName}}</span>
@@ -16,9 +19,13 @@
             <span>总计：</span>
             <span class="r">￥{{orderInfo.Price}}</span>
         </div>
-        <!-- 0初始状态1已下单未结账2已结账 -->
-        <div class="payState" *ngIf="orderInfo.OrderState==2">
-            <img src="/assets/imgs/yijiezhang.png" alt="">
+        <div class="count">
+            <span>抹零：</span>
+            <span class="r">-￥{{orderInfo.ReducePrice}}</span>
+        </div>
+        <div class="count">
+            <span>实收：</span>
+            <span class="r">￥{{orderInfo.Price}}</span>
         </div>
     </div>
 

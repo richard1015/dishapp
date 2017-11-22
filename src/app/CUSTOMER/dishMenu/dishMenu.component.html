@@ -21,52 +21,32 @@
       </div>
     </li>
   </ul>
-  <footer>
-    <ul>
+  <div class="mask" *ngIf="maskState" (click)="maskClick()"></div>
+  <!-- 购物车 footer -->
+  <footer *ngIf="!choiceTaboosState">
+    <ul *ngIf="shoppingState">
       <li>
-        <span>已点菜品（10）</span>
-        <button>清空</button>
+        <span>已点菜品（{{sumDishCount}}）</span>
+        <button (click)="clearShopping();">清空</button>
       </li>
-      <li>
-        <span>鱼香肉丝</span>
-        <span>30.00</span>
-        <div class="numberContain">
-          <i class="reduce"></i>
-          <span class="number">3</span>
-          <i class="add"></i>
+      <li *ngFor="let item of shoppingList" [hidden]="item.Num==0">
+        <div class="gwcDish">
+          <span class="dish-name">{{item.Name}}
+            <span [hidden]="!item.checkName">({{item.checkName}})</span>
+          </span>
+          <span class="dish-price">￥{{item.Price}}/{{item.UnitName}}</span>
         </div>
-      </li>
-      <li>
-        <span>鱼香肉丝</span>
-        <span>30.00</span>
         <div class="numberContain">
-          <i class="reduce"></i>
-          <span class="number">3</span>
-          <i class="add"></i>
-        </div>
-      </li>
-      <li>
-        <span>鱼香肉丝</span>
-        <span>30.00</span>
-        <div class="numberContain">
-          <i class="reduce"></i>
-          <span class="number">3</span>
-          <i class="add"></i>
-        </div>
-      </li>
-      <li>
-        <span>鱼香肉丝</span>
-        <span>30.00</span>
-        <div class="numberContain">
-          <i class="reduce"></i>
-          <span class="number">3</span>
-          <i class="add"></i>
+          <i class="reduce" (click)="updateNumber(item,-1)" *ngIf="item.Num"></i>
+          <span class="number" *ngIf="item.Num">{{item.Num}}</span>
+          <i class="add" (click)="updateNumber(item,1)"></i>
         </div>
       </li>
     </ul>
     <div class="footer">
-      <div class="footer-left">
+      <div class="footer-left" (click)="shoppingClick()">
         <i></i>
+        <span [hidden]="sumDishCount==0">{{sumDishCount}}</span>
       </div>
       <div class="footer-right">
         <span>￥{{sumPrice.toFixed(2)}}</span>
@@ -74,4 +54,26 @@
       </div>
     </div>
   </footer>
-</div>
+  <!-- 选择口味 footer -->
+  <footer class="taboos" *ngIf="choiceTaboosState">
+    <h1>菜品口味</h1>
+    <div class="dishInfo">
+      <div class="gwcDish">
+        <span class="dish-name">{{itemdish.Name}}</span>
+        <span class="dish-price">￥{{itemdish.Price}}/{{itemdish.UnitName}}</span>
+      </div>
+      <div class="numberContain">
+          <i class="reduce" (click)="itemdish.Num=itemdish.Num-1;" *ngIf="itemdish.Num"></i>
+          <span class="number" *ngIf="itemdish.Num">{{itemdish.Num}}</span>
+          <i class="add" (click)="itemdish.Num=itemdish.Num+1;"></i>
+      </div>
+    </div>
+    <h2>口味</h2>
+    <ul class="lable">
+      <li [ngClass]="{'active': checkActive(lable,itemdish,idx)}" (click)="choiceDishtaboos(itemdish,idx)" *ngFor="let lable of itemdish.FNames.split(',');let idx=index;">{{lable}}</li>
+    </ul>
+    <div class="action">
+      <button class="cancel" (click)="maskClick()">取消</button>
+      <button (click)="taboosOk()">确定</button>
+    </div>
+  </footer>

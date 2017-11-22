@@ -12,16 +12,18 @@
 }
 
 .dishlist h1 {
-    color: #FF7979;
+    color: #333333;
     font-size: .426667rem;
-    padding: .4rem 0;
+    font-weight: bold;
+    height: 1.6rem;
+    line-height: 1.6rem;
 }
 
 .dishlist .count {
     display: flex;
     font-size: .48rem;
-    margin-top: .933333rem;
-    margin-bottom: .933333rem;
+    margin-top: .733333rem;
+    margin-bottom: .733333rem;
 }
 
 .dishlist .count span {
@@ -35,13 +37,9 @@
 }
 
 .dishlist .payState {
-    margin:1.146667rem 0;
-    text-align: center;
-}
-
-.dishlist .payState img {
-    width: 2.933333rem;
-    height: 2.533333rem;
+    width: 2rem;
+    height: 1.6rem;
+    position: absolute;
 }
 
 li {

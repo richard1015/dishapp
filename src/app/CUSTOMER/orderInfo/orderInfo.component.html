@@ -1,9 +1,14 @@
-<app-header [title]="tableId+'号桌订单确认'" [right]="'口味选择'" (rightEvent)="rightClick($event)">
+<!-- [right]="'口味选择'" (rightEvent)="rightClick($event)" -->
+<app-header [title]="tableId+'号桌订单确认'">
 </app-header>
 <div class="order-main">
     <ul class="order-info">
-        <li><input class="style" [(ngModel)]="UserOrderingParam.Ask" type="text" name="" id="" placeholder="特殊要求（选填）"></li>
-        <li><input class="style none" [(ngModel)]="UserOrderingParam.PeoPleNum" type="number"  name="" id="" placeholder="用餐人数"></li>
+        <li>
+            <input class="style" [(ngModel)]="UserOrderingParam.Ask" type="text" name="" id="" placeholder="特殊要求（选填）">
+        </li>
+        <li>
+            <input class="style none" [(ngModel)]="UserOrderingParam.PeoPleNum" type="number" name="" id="" placeholder="用餐人数">
+        </li>
     </ul>
     <ul class="dishInfo" *ngFor="let item of dishMenu" [hidden]="checkDishList(item.List)">
         <h1 class="dishInfo-title">{{item.Name}}</h1>
@@ -14,7 +19,9 @@
                 <span>阿达</span>
             </div> -->
             <div class="dish-details">
-                <p>{{itemdish.Name}} <span [hidden]="!itemdish.checkName">({{itemdish.checkName}})</span></p>
+                <p>{{itemdish.Name}}
+                    <span [hidden]="!itemdish.checkName">({{itemdish.checkName}})</span>
+                </p>
                 <br>
                 <span class="price">￥{{itemdish.Price}}</span>
             </div>

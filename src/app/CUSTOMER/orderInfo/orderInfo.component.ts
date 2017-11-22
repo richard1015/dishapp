@@ -28,13 +28,13 @@ export class OrderInfoComponent implements OnInit {
     this.dishMenu = this.ls.getObject("ls_dish");
     this.sumPrice = this.ls.getObject("ls_sumPrice");
   }
-  rightClick(item) {
-    this.ls.setObject("ask", {
-      Ask: this.UserOrderingParam.Ask,
-      PeoPleNum: this.UserOrderingParam.PeoPleNum
-    });
-    this.router.navigateByUrl("/components/taboos");
-  }
+  // rightClick(item) {
+  //   this.ls.setObject("ask", {
+  //     Ask: this.UserOrderingParam.Ask,
+  //     PeoPleNum: this.UserOrderingParam.PeoPleNum
+  //   });
+  //   this.router.navigateByUrl("/components/taboos");
+  // }
   checkDishList(list: [any]) {
     for (var key in list) {
       if (list.hasOwnProperty(key)) {
