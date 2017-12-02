@@ -47,32 +47,33 @@ export class OrderInfoComponent implements OnInit {
     return true;
   }
   getTaboos(checkName) {
-    if(checkName){
+    if (checkName) {
       return checkName.join(',');
-    }else{
+    } else {
       return "";
     }
   }
   submit() {
-    this.UserOrderingParam.Menus = [];
-    for (var key in this.dishMenu) {
-      if (this.dishMenu.hasOwnProperty(key)) {
-        var dishList = this.dishMenu[key];
-        dishList.List.forEach(element => {
-          if (element.Num > 0) {
-            var index = this.UserOrderingParam.Menus.findIndex(menuItem => menuItem.Id == element.Id);
-            if (index == -1) {
-              this.UserOrderingParam.Menus.push({
-                Id: element.Id,
-                Name: element.Name,
-                Num: element.Num,
-                Taboos: this.getTaboos(element.checkName)
-              });
-            }
-          }
-        });
-      }
-    }
+    // this.UserOrderingParam.Menus = [];
+    // for (var key in this.dishMenu) {
+    //   if (this.dishMenu.hasOwnProperty(key)) {
+    //     var dishList = this.dishMenu[key];
+    //     dishList.List.forEach(element => {
+    //       if (element.Num > 0) {
+    //         var index = this.UserOrderingParam.Menus.findIndex(menuItem => menuItem.Id == element.Id);
+    //         if (index == -1) {
+    //           this.UserOrderingParam.Menus.push({
+    //             Id: element.Id,
+    //             Name: element.Name,
+    //             Num: element.Num,
+    //             Taboos: this.getTaboos(element.checkName)
+    //           });
+    //         }
+    //       }
+    //     });
+    //   }
+    // }
+    this.UserOrderingParam.Menus = this.dishMenu[0].List;
     this.api.Post(this.UserOrderingParam, "UserOrdering").subscribe((res) => {
       if (res.State == 0) {
         layer.msg("下单成功！");

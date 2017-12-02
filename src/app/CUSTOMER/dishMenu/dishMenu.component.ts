@@ -65,13 +65,31 @@ export class DishMenuComponent implements OnInit {
     for (const key in object) {
       if (object.hasOwnProperty(key)) {
         const element = object[key];
-        if (JSON.stringify(element) == JSON.stringify(item)) {
-          element.Num += 1;
+        if (element.Id == item.Id && this.checkArray(element.checkName, item.checkName)) {
+          //有口味时 需要 添加总数，无口味外部已添加
+          if (item.FNames) {
+            element.Num += item.Num;
+          } else {
+            element.Num = item.Num;
+          }
           return false;
         }
       }
     }
     return true;
+  }
+  private checkArray(array1, array2): boolean {
+    if (array1 && array2) {
+      if (array1.toString() == array2.toString()) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (array1 == array2) {
+      return true;
+    } else {
+      return false;
+    }
   }
   choiceDishtaboos(itemdish, idx) {
     if (!itemdish.checkName) itemdish.checkName = [];
@@ -107,18 +125,21 @@ export class DishMenuComponent implements OnInit {
   }
   private updateNumberSubmit(item, number: number) {
     if (number == 1) {
-      if (item.Num == 0) {
-        this.sumPrice = item.Price * 1;
-      } else {
+      //有口味时
+      if (item.FNames) {
         this.sumPrice += item.Price * item.Num;
+        let tempObj = JSON.parse(JSON.stringify(item));
+        if (this.checkShoppingState(tempObj)) {
+          this.shoppingList.push(tempObj);
+        }
+      } else {
+        this.sumPrice += item.Price * 1;
+        let tempObj = JSON.parse(JSON.stringify(item));
+        if (this.checkShoppingState(tempObj)) {
+          this.shoppingList.push(tempObj);
+        }
       }
-      let tempObj = JSON.parse(JSON.stringify(item));
-      if (tempObj.Num == 0) {
-        tempObj.Num = 1;
-      }
-      if (this.checkShoppingState(tempObj)) {
-        this.shoppingList.push(tempObj);
-      }
+
     } else {
       this.sumPrice -= item.Price;
     }
@@ -126,12 +147,14 @@ export class DishMenuComponent implements OnInit {
       var index = element.List.findIndex(listItem => listItem.Id == item.Id);
       if (index != -1) {
         if (number == 1) {
-          let tempNumber = item.Num;
-          if (tempNumber == 0) {
-            tempNumber = 1;
+          //判断当前菜品是否口味选择
+          if (item.FNames) {
+            element.Count += item.Num;
+            element.List[index].Num += item.Num;
+          } else {
+            element.Count += 1;
+            element.List[index].Num = item.Num;
           }
-          element.Count += tempNumber;
-          element.List[index].Num += tempNumber;
         } else {
           element.Count -= 1;
           element.List[index].Num -= 1;
@@ -140,12 +163,37 @@ export class DishMenuComponent implements OnInit {
     });
     //购物车同步 -1 
     if (number == - 1) {
-      var index = this.shoppingList.findIndex(listItem => listItem.Id == item.Id);
-      if (index != -1) {
-        this.shoppingList[index].Num -= 1;
+      //判断是否删除成功，如果没有说明是  点击菜品删除，而不是点击购物车删除
+      let deleted = false;
+      let deletedDelNum, deletedIndex = -1;
+      //判断是否已在购物车中
+      let object = this.shoppingList;
+      for (const key in object) {
+        if (object.hasOwnProperty(key)) {
+          const element = object[key];
+          if (element.Id == item.Id && this.checkArray(element.checkName, item.checkName)) {
+            element.Num -= 1;
+            deleted = true;
+            deletedDelNum = element.Num;
+            deletedIndex = parseInt(key);
+            break;
+          }
+        }
+      }
+      //判断是否删除成功，如果没有说明是  点击菜品删除，而不是点击购物车删除
+      if (!deleted) {
+        var index = this.shoppingList.findIndex(listItem => listItem.Id == item.Id);
+        if (index != -1) {
+          this.shoppingList[index].Num -= 1;
+          deletedDelNum = this.shoppingList[index].Num;
+          deletedIndex = index;
+        }
+      }
+      //删除购物车中0 的对象
+      if (deletedDelNum == 0) {
+        this.shoppingList.splice(deletedIndex, 1);
       }
     }
-
     //计算所有菜品数量
     this.sumDishCount = 0;
     this.shoppingList.forEach(element => {
@@ -162,6 +210,9 @@ export class DishMenuComponent implements OnInit {
       this.choiceTaboosState = !this.choiceTaboosState;
       this.maskState = !this.maskState;
     } else {
+      if (item.FNames == "" && number == 1) {
+        item.Num += 1;
+      }
       this.updateNumberSubmit(item, number);
     }
   }
@@ -184,29 +235,36 @@ export class DishMenuComponent implements OnInit {
     this.ngOnInit();
   }
   submit() {
-    let tempArray = [];
-    for (var key in this.dishMenu) {
-      if (this.dishMenu.hasOwnProperty(key)) {
-        var dishList = this.dishMenu[key];
-        dishList.List.forEach(element => {
-          if (element.Num > 0) {
-            var index = tempArray.indexOf(element.Id);
-            if (index == -1) {
-              tempArray.push(element.Id);
-            } else {
-              element.Num = 0;
-            }
-          }
-        });
-      }
-    }
+    // let tempArray = [];
+    // for (var key in this.dishMenu) {
+    //   if (this.dishMenu.hasOwnProperty(key)) {
+    //     var dishList = this.dishMenu[key];
+    //     dishList.List.forEach(element => {
+    //       if (element.Num > 0) {
+    //         var index = tempArray.indexOf(element.Id);
+    //         if (index == -1) {
+    //           tempArray.push(element.Id);
+    //         } else {
+    //           element.Num = 0;
+    //         }
+    //       }
+    //     });
+    //   }
+    // }
 
 
     this.ls.setObject("ask", {
       Ask: "",
       PeoPleNum: ""
     });
-    this.ls.setObject("ls_dish", this.dishMenu);
+    console.log(this.shoppingList);
+
+    //处理 菜品清单 分类
+    this.ls.setObject("ls_dish", [{
+      Count: this.sumDishCount,
+      List: this.shoppingList,
+      Name: "明细"
+    }]);
 
     this.ls.setObject("ls_sumPrice", this.sumPrice);
 
