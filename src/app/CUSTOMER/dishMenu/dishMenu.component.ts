@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../SERVICE/api.service';
 import { LocalStorage } from '../../SERVICE/local.storage';
-import { retry } from '../../../../node_modules/_rxjs@5.5.2@rxjs/operator/retry';
-import { forEach } from '../../../../node_modules/_@angular_router@4.4.6@@angular/router/src/utils/collection';
 declare var layer: any;
 
 @Component({
